@@ -12,40 +12,40 @@ This webpage features an **elegant, modern, and dynamic design**, with ✨ *subt
 
 ### 1. **About us section**
    - Showcases PRING’s mission: **combining experience and human talent** to deliver high-quality consulting services.  
-   - 🖼️ Includes a standout image of professionally designed spaces that inspire.  
+   - Includes a standout image of professionally designed spaces that inspire.  
 
 ### 2. **Services section**  
    - **Specialized services** covering key areas:  
-     - 🏢 Commercial and corporate architecture.  
-     - ⚡ Electrical engineering.  
-     - 💰 Cost engineering.  
-   - 💬 Text highlighting the company’s commitment to quality standards and customer satisfaction.  
-   - ✨ Animated service cards for an enhanced visual experience.  
+     - Commercial and corporate architecture.  
+     - Electrical engineering.  
+     - Cost engineering.  
+   - Text highlighting the company’s commitment to quality standards and customer satisfaction.  
+   - Animated service cards for an enhanced visual experience.  
 
 ### 3. **Experience section**
    - A visual gallery showcasing successfully completed projects.  
-   - 🎥 Smooth transitions in images for a more engaging experience.  
+   - Smooth transitions in images for a more engaging experience.  
 
 ### 4. **Contact section**
    - Clear contact information to facilitate communication with PRING.  
-   - 🖱️ Hover animations on contact elements for added interactivity.  
+   - Hover animations on contact elements for added interactivity.  
 
 <br>
 
 ## 💻 Technologies Used 
 - **HTML5** and **CSS3**: For the structure, styling, and elegant design of the webpage.  
 - **JavaScript**:  
-  - 🎨 Implementation of **animations and dynamic transitions**.  
-  - 🖲️ Interactive functionalities for a seamless user experience.  
-- 📷 High-quality images to emphasize the company’s visual identity.  
-- ✨ User experience (UX)-focused design.  
+  - Implementation of **animations and dynamic transitions**.  
+  - Interactive functionalities for a seamless user experience.  
+- High-quality images to emphasize the company’s visual identity.  
+- User experience (UX)-focused design.  
 
 <br>
 
 ## 🚀 Key Features  
 - **Elegant and modern design**: Tailored to the professional sector’s visual needs.  
-- **Smooth animations**: 🎥 Each section includes transitions and effects that enhance navigation.  
-- **Interactivity**: 🖱️ Dynamic elements respond to user actions, improving overall usability.  
+- **Smooth animations**: Each section includes transitions and effects that enhance navigation.  
+- **Interactivity**: Dynamic elements respond to user actions, improving overall usability.  
 
 <br>
 
