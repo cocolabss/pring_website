@@ -1,0 +1,43 @@
+#pills-us {
+    background-color: #fff;
+
+    .pills-us {
+        padding-top: 100px;
+        display: flex;
+        justify-content: center;
+
+        .us-content {
+            width: 1400px;
+
+            .img-overlay {
+                background-color: #000;
+                position: relative;
+            }
+
+            .img-background {
+                width: 100%;
+                display: block;
+            }
+
+            .img-foreground {
+                position: absolute;
+                top: 45%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 85%;
+            }
+
+            .text-overlay {
+                position: absolute;
+                top: 75%;
+                right: 50px;
+                color: #FFF;
+                font-family: "Trebuchet MS", sans-serif;
+                font-size: 38px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+        }
+    }
+}

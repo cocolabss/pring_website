@@ -1,0 +1,10 @@
+.gallery {
+    background-color: #D9D9D9;
+    height: 100vh;
+    padding-top: 100px;
+    justify-content: center;
+
+    .gallery-content {
+        width: 1400px;
+    }
+}

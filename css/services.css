@@ -1,0 +1,126 @@
+#pills-services {
+    background-color: #000;
+
+    .pills-services {
+        padding-top: 100px;
+        display: flex;
+        justify-content: center;
+
+        .services-content {
+            width: 1400px;
+
+            h2,
+            h3 {
+                color: #fff;
+            }
+
+            .content {
+                padding: 0 0 0 50px;
+
+                .description {
+                    padding: 0;
+                    color: #fff;
+                }
+
+                .button-group {
+                    height: 181px;
+
+                    .col-lg-4 {
+                        display: flex;
+                        justify-content: center;
+                    }
+
+                    button {
+                        width: 100%;
+                        border: none;
+                        padding: 20px;
+                        font-weight: 700;
+                        text-align: center;
+                    }
+
+                    button[data-content="arquitectura"] {
+                        background-color: #4ABCAD;
+                    }
+
+                    button[data-content="electrica"] {
+                        background-color: #FC4A1A;
+                    }
+
+                    button[data-content="costos"] {
+                        background-color: #F7B733;
+                    }
+
+                    button:hover {
+                        opacity: 0.9;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.bg-color-1 {
+    background-color: #4ABCAD !important;
+}
+
+.bg-color-2 {
+    background-color: #FC4A1A !important;
+}
+
+.bg-color-3 {
+    background-color: #F7B733 !important;
+}
+
+.services-info {
+    background-color: #4ABCAD;
+    justify-content: center;
+
+    .services-info-content {
+        width: 1400px;
+
+        .content {
+            margin-bottom: 80px;
+
+            h2 {
+                color: #000;
+                font-weight: 600;
+            }
+
+            .box {
+                border: 10px solid #000;
+                padding: 40px;
+                color: #000;
+            }
+
+            .box-icon {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                border: 10px solid #000;
+                padding: 15px 0;
+                font-weight: bold;
+                color: #000;
+
+                .box-icon-content {
+                    padding-left: 100px;
+
+                    .icon-item {
+                        display: flex;
+                        align-items: center;
+                        gap: 20px;
+                        margin: 20px 0;
+                    }
+                }
+            }
+
+            .arrow {
+                width: 0;
+                height: 0;
+                border-top: 80px solid transparent;
+                border-bottom: 80px solid transparent;
+                border-left: 60px solid black;
+                align-self: center;
+            }
+        }
+    }
+}

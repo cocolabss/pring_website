@@ -1,0 +1,144 @@
+@import url('./info.css');
+@import url('./services.css');
+@import url('./gallery.css');
+@import url('./contact.css');
+
+html,
+body {
+    height: 100%;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h2,
+h3 {
+    margin: 40px 0;
+}
+
+h2 {
+    font-size: 64px;
+}
+
+h3 {
+    font-size: 40px;
+}
+
+.col-lg-6 {
+    padding: 0;
+}
+
+.fade {
+    transition: opacity .15s linear;
+}
+
+.description {
+    color: #000;
+    padding: 50px;
+    margin-bottom: 0;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.container-fluid {
+    padding: 0;
+    justify-content: center;
+}
+
+.navbar {
+    background-color: #000;
+    color: #fff;
+    justify-content: center;
+    height: 100px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+
+    .nav-pills .nav-link {
+        background-color: transparent;
+        position: relative;
+        display: inline-block;
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s ease-in-out;
+    }
+
+    .nav-pills .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 3px;
+        background-color: #fff;
+        transition: width 0.3s ease-in-out;
+    }
+
+    .nav-pills .nav-link:hover::after {
+        width: 100%;
+    }
+
+    .nav-pills .nav-link.active::after {
+        width: 100%;
+    }
+}
+
+@media (max-width: 992px) {
+    body {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    .row {
+        padding: 0;
+    }
+
+    .navbar {
+        height: 80px;
+
+        .navbar-nav {
+            flex-direction: row;
+
+            .nav-link {
+                padding: 0 10px !important;
+                font-size: 16px !important;
+            }
+        }
+    }
+
+    .pills-us {
+        padding-top: 80px !important;
+
+        .us-content {
+            width: 100% !important;
+        }
+
+        .text-lg-end {
+            .description {
+                padding-bottom: 0 !important;
+            }
+        }
+    }
+}
