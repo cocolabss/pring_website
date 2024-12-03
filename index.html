@@ -13,6 +13,19 @@
 </head>
 
 <body>
+    <div class="loading-container" id="loading-screen">
+        <div class="loading-text">
+            <span>C</span>
+            <span>A</span>
+            <span>R</span>
+            <span>G</span>
+            <span>A</span>
+            <span>N</span>
+            <span>D</span>
+            <span>O</span>
+        </div>
+    </div>
+
     <div class="container-fluid">
         <nav class="navbar navbar-expand-lg">
             <ul class="nav nav-pills" id="pills-tab" role="tablist">
@@ -72,7 +85,7 @@
                         <div class="col-lg-12">
                             <h2>Servicios</h2>
                         </div>
-                        <div class="row d-sm-none d-lg-flex">
+                        <div class="row desktop-content">
                             <div class="col-lg-6">
                                 <img src="./img/img_4.png" alt="Interior design" class="img-fluid">
                             </div>
@@ -93,20 +106,20 @@
                                 </p>
                                 <h3>Gestión de proyectos</h3>
                                 <div class="row button-group">
-                                    <div class="col-lg-4">
+                                    <div class="col-4">
                                         <button data-content="arquitectura">Arquitectura comercial y
                                             corporativa</button>
                                     </div>
-                                    <div class="col-lg-4">
+                                    <div class="col-4">
                                         <button data-content="electrica">Ingeniería eléctrica</button>
                                     </div>
-                                    <div class="col-lg-4">
+                                    <div class="col-4">
                                         <button data-content="costos">Ingeniería de costos</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="row d-lg-none d-sm-flex content">
+                        <div class="row content mobile-content">
                             <p class="description">
                                 En PRING contamos con personal con amplio conocimiento y
                                 habilidades para ofrecer a nuestros clientes servicios de la más alta calidad y
@@ -114,6 +127,7 @@
                                 técnicos
                                 en
                                 nuestras distintas áreas de trabajo.
+                                <br><br>
                                 Nuestra experiencia nos permite ofrecer soluciones confiables, oportunas y rentables a
                                 las
                                 necesidades de
@@ -122,13 +136,13 @@
                             <img src="./img/img_4.png" alt="Interior design" class="img-fluid">
                             <h3>Gestión de proyectos</h3>
                             <div class="row button-group">
-                                <div class="col-lg-4">
+                                <div class="col-4">
                                     <button data-content="arquitectura">Arquitectura comercial y corporativa</button>
                                 </div>
-                                <div class="col-lg-4">
+                                <div class="col-4">
                                     <button data-content="electrica">Ingeniería eléctrica</button>
                                 </div>
-                                <div class="col-lg-4">
+                                <div class="col-4">
                                     <button data-content="costos">Ingeniería de costos</button>
                                 </div>
                             </div>
@@ -137,7 +151,7 @@
                 </div>
                 <div id="contentContainer" class="row services-info">
                     <div class="services-info-content">
-                        <div id="arquitectura" class="row content">
+                        <div id="arquitectura" class="row content desktop-content">
                             <div class="col-lg-6">
                                 <h2>Servicios</h2>
                             </div>
@@ -197,6 +211,60 @@
                                 </div>
                             </div>
                         </div>
+                        <div id="arquitectura" class="row content mobile-content">
+                            <h2>Servicios</h2>
+                            <ul style="padding: 0 15px !important;">
+                                <li>Consultoría</li>
+                                <li>Estimación de costos</li>
+                                <li>Cálculo de contingencias</li>
+                                <li>Valoración de planes de acción y mitigación de riesgos</li>
+                                <li>Planeación y control de prespuesto</li>
+                                <li>Flujos de caja y evaluación financiera de proyectos</li>
+                                <li>Definición, cálculo y control de métricas</li>
+                            </ul>
+                            <div class="line"></div>
+                            <div class="arrow"></div>
+                            <h2>Sectores</h2>
+                            <div class="row">
+                                <div class="col-6 icon-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="39" height="36" viewBox="0 0 60 56"
+                                        fill="none">
+                                        <path
+                                            d="M16.0704 34.2794H49.2923C50.1331 34.2794 50.9018 33.775 51.2381 33.0063L59.8138 13.7169C60.2942 12.636 59.8138 11.3628 58.7328 10.8824C58.4686 10.7623 58.1563 10.6902 57.868 10.6902H12.6113L10.7136 1.68211C10.4974 0.673207 9.60864 -0.0234192 8.57571 0.000602444H2.13792C0.960864 -0.0234192 0 0.937445 0 2.1145C0 3.29156 0.960864 4.25242 2.13792 4.25242H6.82213L12.5153 30.8924C8.88799 32.8141 7.47072 37.3061 9.39244 40.9334C10.3053 42.687 11.9147 44.0082 13.8124 44.5847C13.1879 45.6897 12.8516 46.9148 12.8516 48.1879C12.8516 52.3196 16.2146 55.6827 20.3463 55.6827C24.478 55.6827 27.841 52.3196 27.841 48.1879C27.841 47.0829 27.5768 45.9779 27.0964 44.969H35.0235C34.5431 45.9779 34.2788 47.0589 34.2788 48.1879C34.2788 52.3196 37.6418 55.6827 41.7736 55.6827C45.9053 55.6827 49.2683 52.3196 49.2683 48.1879C49.2683 47.0829 49.0041 45.9779 48.5236 44.969H51.4062C52.5833 44.969 53.5441 44.0082 53.5441 42.8311C53.5441 41.654 52.5833 40.6932 51.4062 40.6932H16.0704C14.2928 40.6932 12.8516 39.2519 12.8516 37.4743C12.8516 35.6967 14.2928 34.2794 16.0704 34.2794ZM23.5892 48.2119C23.5892 49.9895 22.1479 51.4308 20.3703 51.4308C18.5927 51.4308 17.1514 49.9895 17.1514 48.2119C17.1514 46.4343 18.5927 44.9931 20.3703 44.9931C22.1479 44.9931 23.5892 46.4343 23.5892 48.2119ZM45.0165 48.2119C45.0165 49.9895 43.5752 51.4308 41.7976 51.4308C40.02 51.4308 38.5787 49.9895 38.5787 48.2119C38.5787 46.4343 40.02 44.9931 41.7976 44.9931C43.5752 44.9931 45.0165 46.4343 45.0165 48.2119ZM54.5771 14.9901L47.8991 30.0036H16.7431L13.5242 14.9901H54.5771Z"
+                                            fill="black" />
+                                    </svg>
+                                    <span>Retail</span>
+                                </div>
+                                <div class="col-6 icon-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="39" height="36" viewBox="0 0 60 60"
+                                        fill="none">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M25.0201 25.0201H4.99329V35.0336H24.9933V55.0336H35.0067V35.0336H55.0336V25.0201H35.0336V4.99329H25.0201V25.0201ZM20 4.02685C20 2.60403 20 1.87919 20.2685 1.34228C20.5101 0.885906 20.8859 0.510067 21.3423 0.268456C21.8792 0 22.604 0 24.0268 0H35.9732C37.396 0 38.1208 0 38.6577 0.268456C39.1141 0.510067 39.4899 0.885906 39.7315 1.34228C40 1.87919 40 2.60403 40 4.02685V20H55.9732C57.396 20 58.1208 20 58.6577 20.2685C59.1141 20.5101 59.4899 20.8859 59.7315 21.3423C60 21.8792 60 22.604 60 24.0268V35.9732C60 37.396 60 38.1208 59.7315 38.6577C59.4899 39.1141 59.1141 39.4899 58.6577 39.7315C58.1208 40 57.396 40 55.9732 40H40V55.9732C40 57.396 40 58.1208 39.7315 58.6577C39.4899 59.1141 39.1141 59.4899 38.6577 59.7315C38.1208 60 37.396 60 35.9732 60H24.0268C22.604 60 21.8792 60 21.3423 59.7315C20.8859 59.4899 20.5101 59.1141 20.2685 58.6577C20 58.1208 20 57.396 20 55.9732V40H4.02685C2.60403 40 1.87919 40 1.34228 39.7315C0.885906 39.4899 0.510067 39.1141 0.268456 38.6577C0 38.1208 0 37.396 0 35.9732V24.0268C0 22.604 0 21.8792 0.268456 21.3423C0.510067 20.8859 0.885906 20.5101 1.34228 20.2685C1.87919 20 2.60403 20 4.02685 20H20V4.02685Z"
+                                            fill="black" />
+                                    </svg>
+                                    <span>Salud</span>
+                                </div>
+                                <div class="col-6 icon-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="39" height="36" viewBox="0 0 50 63"
+                                        fill="none">
+                                        <path
+                                            d="M49.2861 3.81658C48.8193 3.34981 48.2153 3.10269 47.5563 3.10269H41.8451V2.44371C41.8451 1.0983 40.7468 0 39.4014 0H25.9473C24.6019 0 23.5036 1.0983 23.5036 2.44371V3.10269H8.40198C3.76167 3.10269 0 6.86436 0 11.5047V54.2284C0 58.8138 3.73421 62.548 8.3196 62.548H47.5563C48.9017 62.548 50 61.4497 50 60.1043V5.5464C50 4.88742 49.7529 4.28336 49.2861 3.81658ZM8.40198 7.99012H23.5036V20.95C23.5036 21.8012 23.9429 22.57 24.6568 23.0368C25.3707 23.4761 26.2768 23.5036 27.0181 23.1466L32.6744 20.291L38.3031 23.1192C39.0445 23.4761 39.9506 23.4487 40.6645 23.0093C41.3784 22.57 41.8177 21.8012 41.8177 20.9226V7.99012H45.1126V45.9088H8.3196C7.11148 45.9088 5.95826 46.156 4.85997 46.6502V11.5047C4.85997 10.5711 5.21691 9.66502 5.90335 9.00604C6.56233 8.34706 7.46842 7.99012 8.40198 7.99012ZM45.1126 50.7688V57.6606H8.3196C6.42504 57.6606 4.85997 56.123 4.85997 54.201C4.85997 52.3064 6.39758 50.7413 8.3196 50.7413H45.1126V50.7688ZM36.9577 16.9962L33.7727 15.4036C33.4432 15.2389 33.0588 15.1565 32.6744 15.1565C32.2899 15.1565 31.933 15.2389 31.5761 15.4036L28.3635 16.9962V4.85997H36.9577V16.9962Z"
+                                            fill="black" />
+                                    </svg>
+                                    <span>Educación</span>
+                                </div>
+                                <div class="col-6 icon-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="39" height="36" viewBox="0 0 70 52"
+                                        fill="none">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M70 38.5955V43.3345C70 45.6686 69.0333 47.7905 67.5008 49.3466C65.9683 50.8791 63.8228 51.8457 61.4887 51.8457H8.48771C6.15359 51.8457 4.03166 50.8791 2.47558 49.3466C0.943079 47.8141 0 45.6686 0 43.3345V38.5955C0 37.676 0.754463 36.9215 1.67396 36.9215H5.16335C5.13978 36.7801 5.1162 36.6622 5.1162 36.5207V4.22028C5.1162 3.06501 5.58774 2.00404 6.36578 1.24958C7.12024 0.471539 8.18121 0 9.33648 0H60.6635C61.8188 0 62.8798 0.471539 63.6578 1.24958C64.4358 2.02762 64.9074 3.06501 64.9074 4.24385V36.5207C64.9074 36.6622 64.8838 36.8036 64.8602 36.9215H68.3496C69.2455 36.9215 70 37.676 70 38.5955ZM8.3934 36.9215H23.2469C23.8835 36.9215 24.4493 37.2752 24.7322 37.8174L26.5712 40.6467H43.4052L45.3385 37.676C45.6686 37.1809 46.1873 36.9215 46.7295 36.9215H61.583C61.5595 36.7801 61.5359 36.6622 61.5359 36.5207V4.24385C61.5359 4.00808 61.4416 3.79589 61.2765 3.63085C61.1115 3.46581 60.8993 3.37151 60.6635 3.37151H9.33648C9.10071 3.37151 8.86494 3.46581 8.72348 3.63085C8.55844 3.79589 8.46413 4.00808 8.46413 4.24385V36.5207C8.46413 36.6386 8.44055 36.7801 8.3934 36.9215ZM13.486 32.2061H56.514V8.3934H13.486V32.2061ZM58.1879 35.5541C59.1074 35.5541 59.8619 34.7996 59.8619 33.8801V6.69586C59.8619 5.77636 59.1074 5.02189 58.1879 5.02189H11.8121C10.8926 5.02189 10.1381 5.77636 10.1381 6.69586V33.8801C10.1381 34.7996 10.8926 35.5541 11.8121 35.5541H58.1879ZM66.6521 43.3345V40.2695H47.649L45.81 43.0987C45.5271 43.6174 44.9613 43.9946 44.3247 43.9946H35.0118H25.6989C25.1566 43.9946 24.6143 43.7353 24.3078 43.2401L22.3745 40.2695H3.37151V43.3345C3.37151 44.7491 3.96093 46.0458 4.88043 46.9653C5.82351 47.9084 7.09667 48.4742 8.51128 48.4742H61.5123C62.9269 48.4742 64.2236 47.8848 65.1431 46.9653C66.0626 46.0458 66.6521 44.7491 66.6521 43.3345Z"
+                                            fill="black" />
+                                    </svg>
+                                    <span>Oficina & Coworking</span>
+                                </div>
+                            </div>
+                        </div>
+
                         <div id="electrica" class="row content hidden">
                             <div class="col-lg-6">
                                 <h2>Servicios</h2>
@@ -326,42 +394,50 @@
                         <div class="tz-gallery d-none d-md-block">
                             <div class="row">
                                 <div class="col-sm-12 col-md-4">
-                                    <a class="lightbox" href="/img/gallery/gallery_1.png" data-caption="Descripción de la gallery 1">
+                                    <a class="lightbox" href="/img/gallery/gallery_1.png"
+                                        data-caption="Descripción de la gallery 1">
                                         <img src="/img/gallery/gallery_1.png" alt="gallery_1" loading="lazy">
                                     </a>
                                 </div>
                                 <div class="col-sm-6 col-md-4">
-                                    <a class="lightbox" href="/img/gallery/gallery_2.png" data-caption="Descripción de la gallery 2">
+                                    <a class="lightbox" href="/img/gallery/gallery_2.png"
+                                        data-caption="Descripción de la gallery 2">
                                         <img src="/img/gallery/gallery_2.png" alt="gallery_2" loading="lazy">
                                     </a>
                                 </div>
                                 <div class="col-sm-6 col-md-4">
-                                    <a class="lightbox" href="/img/gallery/gallery_3.png" data-caption="Descripción de la gallery 3">
+                                    <a class="lightbox" href="/img/gallery/gallery_3.png"
+                                        data-caption="Descripción de la gallery 3">
                                         <img src="/img/gallery/gallery_3.png" alt="gallery_3" loading="lazy">
                                     </a>
                                 </div>
                                 <div class="col-sm-12 col-md-4">
-                                    <a class="lightbox" href="/img/gallery/gallery_4.png" data-caption="Descripción de la gallery 4">
+                                    <a class="lightbox" href="/img/gallery/gallery_4.png"
+                                        data-caption="Descripción de la gallery 4">
                                         <img src="/img/gallery/gallery_4.png" alt="gallery_4" loading="lazy">
                                     </a>
                                 </div>
                                 <div class="col-sm-6 col-md-4">
-                                    <a class="lightbox" href="/img/gallery/gallery_5.png" data-caption="Descripción de la gallery 5">
+                                    <a class="lightbox" href="/img/gallery/gallery_5.png"
+                                        data-caption="Descripción de la gallery 5">
                                         <img src="/img/gallery/gallery_5.png" alt="gallery_5" loading="lazy">
                                     </a>
                                 </div>
                                 <div class="col-sm-6 col-md-4">
-                                    <a class="lightbox" href="/img/gallery/gallery_6.png" data-caption="Descripción de la gallery 6">
+                                    <a class="lightbox" href="/img/gallery/gallery_6.png"
+                                        data-caption="Descripción de la gallery 6">
                                         <img src="/img/gallery/gallery_6.png" alt="gallery_6" loading="lazy">
                                     </a>
                                 </div>
                                 <div class="col-sm-6 col-md-4">
-                                    <a class="lightbox" href="/img/gallery/gallery_7.png" data-caption="Descripción de la gallery 7">
+                                    <a class="lightbox" href="/img/gallery/gallery_7.png"
+                                        data-caption="Descripción de la gallery 7">
                                         <img src="/img/gallery/gallery_7.png" alt="gallery_7" loading="lazy">
                                     </a>
                                 </div>
                                 <div class="col-sm-6 col-md-8">
-                                    <a class="lightbox" href="/img/gallery/gallery_8.png" data-caption="Descripción de la gallery 8">
+                                    <a class="lightbox" href="/img/gallery/gallery_8.png"
+                                        data-caption="Descripción de la gallery 8">
                                         <img src="/img/gallery/gallery_8.png" alt="gallery_8" loading="lazy">
                                     </a>
                                 </div>
@@ -418,11 +494,13 @@
                                     </div>
                                 </div>
                             </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselGallery" data-bs-slide="prev">
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselGallery"
+                                data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Anterior</span>
                             </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carouselGallery" data-bs-slide="next">
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselGallery"
+                                data-bs-slide="next">
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Siguiente</span>
                             </button>

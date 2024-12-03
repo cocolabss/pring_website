@@ -40,6 +40,129 @@ h3 {
     padding: 0;
 }
 
+.loading-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    color: white;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+
+    &:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background-color: #fff;
+        bottom: 0;
+        left: 0;
+        border-radius: 10px;
+        animation: movingLine 2.4s infinite ease-in-out;
+    }
+}
+
+.hidden-loader {
+    opacity: 0;
+    visibility: hidden;
+}
+
+@keyframes movingLine {
+    0% {
+        opacity: 0;
+        width: 0;
+    }
+
+    33.3%,
+    66% {
+        opacity: 0.8;
+        width: 100%;
+    }
+
+    85% {
+        width: 0;
+        left: initial;
+        right: 0;
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        width: 0;
+    }
+}
+
+.loading-text {
+    font-size: 5vw;
+    line-height: 64px;
+    letter-spacing: 10px;
+    margin-bottom: 32px;
+    display: flex;
+    justify-content: space-evenly;
+
+    span {
+        animation: moveLetters 2.4s infinite ease-in-out;
+        transform: translatex(0);
+        position: relative;
+        display: inline-block;
+        opacity: 0;
+        text-shadow: 0px 2px 10px rgba(46, 74, 81, 0.3);
+    }
+}
+
+.loading-text span:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.loading-text span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.loading-text span:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.loading-text span:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.loading-text span:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.loading-text span:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+.loading-text span:nth-child(7) {
+    animation-delay: 0.7s;
+}
+
+@keyframes moveLetters {
+    0% {
+        transform: translateX(-15vw);
+        opacity: 0;
+    }
+
+    33.3%,
+    66% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(15vw);
+        opacity: 0;
+    }
+}
+
 .fade {
     transition: opacity .15s linear;
 }
@@ -98,29 +221,42 @@ h3 {
     }
 }
 
+.desktop-content {
+    display: flex;
+}
+
+.mobile-content {
+    display: none;
+}
+
 @media (max-width: 992px) {
     body {
         font-size: 15px;
     }
 
-    h2 {
+    h3 {
+        margin: 40px 0 !important;
+    }
+
+    h2,
+    h3 {
         font-size: 32px;
         text-align: center;
     }
 
-    .row {
-        padding: 0;
+    .row>* {
+        padding: 0 !important;
     }
 
     .navbar {
         height: 80px;
 
-        .navbar-nav {
+        .nav-pills {
             flex-direction: row;
 
             .nav-link {
                 padding: 0 10px !important;
-                font-size: 16px !important;
+                font-size: 14px !important;
             }
         }
     }
@@ -129,11 +265,27 @@ h3 {
         text-align: justify;
     }
 
+    .desktop-content {
+        display: none !important;
+    }
+
+    .mobile-content {
+        display: flex !important;
+    }
+
     .pills-us {
         padding-top: 80px !important;
 
         .us-content {
             width: 100% !important;
+
+            .text-overlay {
+                font-size: 30px !important;
+            }
+        }
+
+        .description {
+            padding: 30px !important;
         }
 
         .text-lg-end {
@@ -143,11 +295,68 @@ h3 {
         }
     }
 
+    .pills-services {
+        padding-top: 80px !important;
+
+        .services-content {
+            .content {
+                padding: 0 !important;
+
+                .description {
+                    padding: 0 30px !important;
+                    margin-bottom: 40px !important;
+                }
+
+                .button-group {
+                    height: 100px !important;
+
+                    .col-4 {
+                        padding: 0 10px !important;
+                    }
+
+                    button {
+                        font-size: 12px !important;
+                    }
+                }
+            }
+        }
+    }
+
+    .services-info-content {
+        .mobile-content {
+            margin: 0 30px !important;
+            margin-bottom: 40px !important;
+
+            h2 {
+                text-align: start !important;
+                margin: 20px 0 !important;
+            }
+
+            .line {
+                margin-top: 20px;
+                border-bottom: #000 solid 4px;
+            }
+
+            .arrow {
+                border-left: 20px solid transparent !important;
+                border-right: 20px solid transparent !important;
+                border-top: 20px solid black !important;
+                border-bottom: none !important;
+                margin: 0 auto !important;
+            }
+
+            .icon-item {
+                font-weight: bold;
+                color: #000;
+            }
+        }
+    }
+
     .pills-gallery {
         padding-top: 80px !important;
 
         .gallery-content {
-            padding: 0 50px;
+            padding: 0 30px;
         }
     }
 
@@ -155,7 +364,7 @@ h3 {
         padding-top: 80px !important;
 
         .contact-content {
-            padding: 0 50px !important;
+            padding: 0 30px !important;
 
             form {
                 padding: 40px !important;
