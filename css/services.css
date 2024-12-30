@@ -23,7 +23,7 @@
                 }
 
                 .button-group {
-                    height: 181px;
+                    height: 182px;
 
                     .col-4 {
                         display: flex;
@@ -38,20 +38,16 @@
                         text-align: center;
                     }
 
-                    button[data-content="arquitectura"] {
+                    button[data-content="arquitectura"], button[data-content="arquitectura-mobile"] {
                         background-color: #4ABCAD;
                     }
 
-                    button[data-content="electrica"] {
+                    button[data-content="electrica"], button[data-content="electrica-mobile"] {
                         background-color: #FC4A1A;
                     }
 
-                    button[data-content="costos"] {
+                    button[data-content="costos"], button[data-content="costos-mobile"] {
                         background-color: #F7B733;
-                    }
-
-                    button:hover {
-                        opacity: 0.9;
                     }
                 }
             }

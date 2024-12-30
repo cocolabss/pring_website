@@ -8,6 +8,7 @@ body {
     height: 100%;
     scroll-behavior: smooth;
     overflow-x: hidden;
+    background-color: #000;
 }
 
 * {
@@ -34,6 +35,10 @@ h2 {
 
 h3 {
     font-size: 40px;
+}
+
+p {
+    margin-bottom: 0 !important;
 }
 
 .col-lg-6 {
@@ -168,7 +173,7 @@ h3 {
 }
 
 .description {
-    color: #000;
+    color: #fff;
     padding: 50px;
     margin-bottom: 0;
 }
@@ -300,19 +305,23 @@ h3 {
 
         .services-content {
             .content {
-                padding: 0 !important;
+                padding: 0 0 0 20px !important;
 
                 .description {
-                    padding: 0 30px !important;
+                    padding: 0 40px 0 20px !important;
                     margin-bottom: 40px !important;
+                }
+
+                img {
+                    margin-left: -10px !important;
+                }
+
+                h3 {
+                    padding-right: 20px !important;
                 }
 
                 .button-group {
                     height: 100px !important;
-
-                    .col-4 {
-                        padding: 0 10px !important;
-                    }
 
                     button {
                         font-size: 12px !important;
@@ -323,9 +332,10 @@ h3 {
     }
 
     .services-info-content {
-        .mobile-content {
-            margin: 0 30px !important;
-            margin-bottom: 40px !important;
+        margin: 0 30px !important;
+
+        .content {
+            margin: 0 40px 24px 40px !important;
 
             h2 {
                 text-align: start !important;
