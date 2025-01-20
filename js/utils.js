@@ -46,6 +46,100 @@ export function handleButtons() {
     });
 }
 
+export function handleScroll() {
+	const scrollBackBtn = document.getElementById("scroll-back-btn");
+	const scrollNextBtn = document.getElementById("scroll-next-btn");
+
+	function checkNavigationButtons() {
+		const activeLink = document.querySelector('.nav-link.active');
+		const nextLink = activeLink.closest('li').nextElementSibling;
+		const prevLink = activeLink.closest('li').previousElementSibling;
+
+		scrollNextBtn.style.visibility = nextLink ? "visible" : "hidden";
+		scrollBackBtn.style.visibility = prevLink ? "visible" : "hidden";
+	}
+
+	function getNextSection() {
+		const activeLink = document.querySelector('.nav-link.active');
+		const nextLink = activeLink.closest('li').nextElementSibling;
+		if (nextLink) {
+			const nextTab = nextLink.querySelector('.nav-link');
+			return nextTab.getAttribute('href').substring(1);
+		}
+		return null;
+	}
+
+	function getPreviousSection() {
+		const activeLink = document.querySelector('.nav-link.active');
+		const prevLink = activeLink.closest('li').previousElementSibling;
+		if (prevLink) {
+			const prevTab = prevLink.querySelector('.nav-link');
+			return prevTab.getAttribute('href').substring(1);
+		}
+		return null;
+	}
+
+	scrollNextBtn.addEventListener("click", function () {
+		const nextSectionId = getNextSection();
+		if (nextSectionId) {
+			const nextTab = document.querySelector(`#pills-tab a[href="#${nextSectionId}"]`);
+			if (nextTab) {
+				const tab = new bootstrap.Tab(nextTab);
+				tab.show();
+				checkNavigationButtons();
+			}
+		}
+	});
+
+	scrollBackBtn.addEventListener("click", function () {
+		const prevSectionId = getPreviousSection();
+		if (prevSectionId) {
+			const prevTab = document.querySelector(`#pills-tab a[href="#${prevSectionId}"]`);
+			if (prevTab) {
+				const tab = new bootstrap.Tab(prevTab);
+				tab.show();
+				checkNavigationButtons();
+			}
+		}
+	});
+
+	checkNavigationButtons();
+}
+
+export function galleryCarousel() {
+	const modal = document.getElementById('projectModal');
+	const carouselContent = document.getElementById('carouselContent');
+
+	const projects = {
+		1: [
+			{ src: './img/gallery/gallery_1.png', alt: 'Imagen 1' },
+			{ src: './img/gallery/gallery_1b.png', alt: 'Imagen 1B' },
+			{ src: './img/gallery/gallery_1c.png', alt: 'Imagen 1C' }
+		],
+		2: [
+			{ src: './img/gallery/gallery_2.png', alt: 'Imagen 2' },
+			{ src: './img/gallery/gallery_2b.png', alt: 'Imagen 2B' }
+		]
+	};
+
+	modal.addEventListener('show.bs.modal', (event) => {
+		const button = event.relatedTarget;
+		const projectId = button.getAttribute('data-project');
+		const images = projects[projectId] || [];
+
+		carouselContent.innerHTML = images
+			.map(
+				(img, index) => `
+            <div class="carousel-item ${index === 0 ? 'active' : ''}">
+                <img src="${img.src}" class="d-block w-100" alt="${img.alt}">
+            </div>
+        `
+			)
+			.join('');
+	});
+}
+
+
 export function submitForm(event) {
     event.preventDefault();
     const name = document.getElementById("name").value;
