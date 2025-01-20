@@ -2,631 +2,505 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pring</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
-    <link href="./css/index.css" rel="stylesheet">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Pring</title>
+
+	<link rel="icon" type="image/x-icon" href="./img/favicon.png">
+
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
+
+	<link href="./css/index.css" rel="stylesheet">
 </head>
 
 <body>
-    <div class="loading-container" id="loading-screen">
-        <div class="loading-text">
-            <span>P</span>
-            <span>R</span>
-            <span>I</span>
-            <span>N</span>
-            <span>G</span>
-        </div>
-    </div>
+	<div class="loading-container" id="loading-screen">
+		<div class="loading-text">
+			<span>P</span>
+			<span>R</span>
+			<span>I</span>
+			<span>N</span>
+			<span>G</span>
+		</div>
+	</div>
 
-    <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg">
-            <ul class="nav nav-pills" id="pills-tab" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <a class="nav-link active" id="pills-us-tab" data-toggle="pill" href="#pills-us" role="tab"
-                        aria-controls="pills-us" aria-selected="true">Nosotros</a>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="pills-services-tab" data-toggle="pill" href="#pills-services" role="tab"
-                        aria-controls="pills-services" aria-selected="false">Servicios</a>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="pills-gallery-tab" data-toggle="pill" href="#pills-gallery" role="tab"
-                        aria-controls="pills-gallery" aria-selected="false">Experiencia</a>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab"
-                        aria-controls="pills-contact" aria-selected="false">Contacto</a>
-                </li>
-            </ul>
-        </nav>
+	<div class="container-fluid">
+		<nav class="navbar navbar-expand-lg">
+			<ul class="nav nav-pills" id="pills-tab" role="tablist">
+				<li class="nav-item" role="presentation">
+					<a class="nav-link active" id="pills-us-tab" data-toggle="pill" href="#pills-us" role="tab"
+						aria-controls="pills-us" aria-selected="true">Nosotros</a>
+				</li>
+				<li class="nav-item" role="presentation">
+					<a class="nav-link" id="pills-services-tab" data-toggle="pill" href="#pills-services" role="tab"
+						aria-controls="pills-services" aria-selected="false">Servicios</a>
+				</li>
+				<li class="nav-item" role="presentation">
+					<a class="nav-link" id="pills-gallery-tab" data-toggle="pill" href="#pills-gallery" role="tab"
+						aria-controls="pills-gallery" aria-selected="false">Experiencia</a>
+				</li>
+				<li class="nav-item" role="presentation">
+					<a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab"
+						aria-controls="pills-contact" aria-selected="false">Contacto</a>
+				</li>
+			</ul>
+		</nav>
 
-        <div class="tab-content">
-            <div class="tab-pane fade show active" id="pills-us" role="tabpanel" aria-labelledby="pills-us-tab">
-                <div class="pills-us">
-                    <div class="row us-content">
-                        <div class="col-lg-6 text-lg-end">
-                            <div class="img-overlay">
-                                <img src="./img/img_1.png" alt="Image spiral" class="img-background">
-                                <img src="./img/img_2.png" alt="Image logo" class="img-foreground">
-                                <p class="text-overlay">Espacios que inspiran</p>
-                            </div>
-                            <p class="description">
-                                La experiencia ha comprobado que identificando los posibles problemas desde las etapas
-                                tempranas, en
-                                costos y cronograma, dichos problemas se pueden evitar en la etapa de ejecución.
-                            </p>
-                        </div>
-                        <div class="col-lg-6">
-                            <p class="description">
-                                En PRING nos enfocamos en combinar nuestra experiencia en el campo de la CONSTRUCCIÓN y
-                                los
-                                conocimientos de nuestro CAPITAL HUMANO para ofrecer un mejor servicio de CONSULTORÍA en
-                                Gestión
-                                y
-                                Ejecución de Proyectos.
-                            </p>
-                            <img src="./img/img_3.png" alt="Interior design" class="img-fluid">
-                        </div>
-                    </div>
-                </div>
-            </div>
+		<div class="tab-content" id="pills-tabContent">
+			<div class="tab-pane fade show active" id="pills-us" role="tabpanel" aria-labelledby="pills-us-tab">
+				<div class="pills-us">
+					<div class="row us-content">
+						<div class="col-lg-6 text-lg-end">
+							<div class="img-overlay">
+								<img src="./img/img_1.png" alt="Image spiral" class="img-background">
+								<img src="./img/img_2.png" alt="Image logo" class="img-foreground">
+								<p class="text-overlay">Espacios que inspiran</p>
+							</div>
+							<p class="description">
+								La experiencia ha comprobado que identificando los posibles problemas desde las etapas
+								tempranas, en
+								costos y cronograma, dichos problemas se pueden evitar en la etapa de ejecución.
+							</p>
+						</div>
+						<div class="col-lg-6">
+							<p class="description">
+								En PRING nos enfocamos en combinar nuestra experiencia en el campo de la CONSTRUCCIÓN y
+								los
+								conocimientos de nuestro CAPITAL HUMANO para ofrecer un mejor servicio de CONSULTORÍA en
+								Gestión
+								y
+								Ejecución de Proyectos.
+							</p>
+							<img src="./img/img_3.png" alt="Interior design" class="img-fluid">
+						</div>
+					</div>
+				</div>
+			</div>
 
-            <div class="tab-pane fade" id="pills-services" role="tabpanel" aria-labelledby="pills-services-tab">
-                <div class="pills-services">
-                    <div class="services-content">
-                        <div class="col-lg-12">
-                            <h2>Servicios</h2>
-                        </div>
-                        <div class="row d-none d-md-flex">
-                            <div class="col-lg-6">
-                                <img src="./img/img_4.png" alt="Interior design" class="img-fluid">
-                            </div>
-                            <div class="col-lg-6 content">
-                                <p class="description">
-                                    En PRING contamos con personal con amplio conocimiento y
-                                    habilidades para ofrecer a nuestros clientes servicios de la más alta calidad y
-                                    estándares
-                                    técnicos
-                                    en
-                                    nuestras distintas áreas de trabajo.
-                                    Nuestra experiencia nos permite ofrecer soluciones confiables, oportunas y
-                                    rentables
-                                    a
-                                    las
-                                    necesidades de
-                                    nuestros clientes, las cuales son nuestra prioridad.
-                                </p>
-                                <h3>Gestión de proyectos</h3>
-                                <div class="row button-group">
-                                    <div class="col-4">
-                                        <button data-content="arquitectura">Arquitectura comercial y
-                                            corporativa</button>
-                                    </div>
-                                    <div class="col-4">
-                                        <button data-content="electrica">Ingeniería eléctrica</button>
-                                    </div>
-                                    <div class="col-4">
-                                        <button data-content="costos">Ingeniería de costos</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row content d-block d-md-none">
-                            <p class="description">
-                                En PRING contamos con personal con amplio conocimiento y
-                                habilidades para ofrecer a nuestros clientes servicios de la más alta calidad y
-                                estándares
-                                técnicos
-                                en
-                                nuestras distintas áreas de trabajo.
-                                <br><br>
-                                Nuestra experiencia nos permite ofrecer soluciones confiables, oportunas y rentables a
-                                las
-                                necesidades de
-                                nuestros clientes, las cuales son nuestra prioridad.
-                            </p>
-                            <img src="./img/img_4.png" alt="Interior design" class="img-fluid">
-                            <h3>Gestión de proyectos</h3>
+			<div class="tab-pane fade" id="pills-services" role="tabpanel" aria-labelledby="pills-services-tab">
+				<div class="pills-services">
+					<div class="services-content">
+						<div class="col-lg-12">
+							<h2>Servicios</h2>
+						</div>
+						<div class="row d-none d-md-flex">
+							<div class="col-lg-6">
+								<img src="./img/img_4.png" alt="Interior design" class="img-fluid">
+							</div>
+							<div class="col-lg-6 content">
+								<p class="description">
+									En PRING contamos con personal con amplio conocimiento y
+									habilidades para ofrecer a nuestros clientes servicios de la más alta calidad y
+									estándares
+									técnicos
+									en
+									nuestras distintas áreas de trabajo.
+									Nuestra experiencia nos permite ofrecer soluciones confiables, oportunas y
+									rentables
+									a
+									las
+									necesidades de
+									nuestros clientes, las cuales son nuestra prioridad.
+								</p>
+								<h3>Gestión de proyectos</h3>
+								<div class="row button-group">
+									<div class="col-4">
+										<button data-content="arquitectura">Arquitectura comercial y
+											corporativa</button>
+									</div>
+									<div class="col-4">
+										<button data-content="electrica">Ingeniería eléctrica</button>
+									</div>
+									<div class="col-4">
+										<button data-content="costos">Ingeniería de costos</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row content d-block d-md-none">
+							<p class="description">
+								En PRING contamos con personal con amplio conocimiento y
+								habilidades para ofrecer a nuestros clientes servicios de la más alta calidad y
+								estándares
+								técnicos
+								en
+								nuestras distintas áreas de trabajo.
+								<br><br>
+								Nuestra experiencia nos permite ofrecer soluciones confiables, oportunas y rentables a
+								las
+								necesidades de
+								nuestros clientes, las cuales son nuestra prioridad.
+							</p>
+							<img src="./img/img_4.png" alt="Interior design" class="img-fluid">
+							<h3>Gestión de proyectos</h3>
 
-                            <div class="row button-group">
-                                <div class="col-4">
-                                    <button data-content="arquitectura-mobile">Arquitectura comercial y
-                                        corporativa</button>
-                                </div>
-                                <div class="col-4">
-                                    <button data-content="electrica-mobile">Ingeniería eléctrica</button>
-                                </div>
-                                <div class="col-4">
-                                    <button data-content="costos-mobile">Ingeniería de costos</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="contentContainer" class="row services-info">
-                    <div class="services-info-content">
-                        <div class="d-none d-md-block">
-                            <div id="arquitectura" class="row content">
-                                <div class="col-lg-6">
-                                    <h2>Servicios</h2>
-                                </div>
-                                <div class="col-lg-6">
-                                    <h2>Sectores</h2>
-                                </div>
-                                <div class="col-lg-6 box">
-                                    <ul>
-                                        <li>Consultoría</li>
-                                        <li>Estimación de costos</li>
-                                        <li>Cálculo de contingencias</li>
-                                        <li>Valoración de planes de acción y mitigación de riesgos</li>
-                                        <li>Planeación y control de prespuesto</li>
-                                        <li>Flujos de caja y evaluación financiera de proyectos</li>
-                                        <li>Definición, cálculo y control de métricas</li>
-                                    </ul>
-                                </div>
-                                <div class="col-lg-6 box-icon">
-                                    <div class="arrow"></div>
-                                    <div class="row box-icon-content">
-                                        <div class="icon-item">
-                                            <img src="./img/icons/retail.svg">
-                                            <span>Retail</span>
-                                        </div>
-                                        <div class="icon-item">
-                                            <img src="./img/icons/salud.svg">
-                                            <span>Salud</span>
-                                        </div>
-                                        <div class="icon-item">
-                                            <img src="./img/icons/education.svg">
-                                            <span>Educación</span>
-                                        </div>
-                                        <div class="icon-item">
-                                            <img src="./img/icons/office.svg">
-                                            <span>Oficina & Coworking</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="electrica" class="row content hidden">
-                                <div class="col-lg-6">
-                                    <h2>Servicios</h2>
-                                </div>
-                                <div class="col-lg-6">
-                                    <h2>Sectores</h2>
-                                </div>
-                                <div class="col-lg-6 box">
-                                    <ul>
-                                        <li>Sistemas de Puesta a Tierra y Protección contra descargas atmosféricas</li>
-                                        <li>Sistemas de protección contra descargares atmosféricas</li>
-                                        <li>Sistemas de protección contra sobretensiones</li>
-                                        <li>Instalaciones eléctricas industriales y domiciliarias</li>
-                                        <li>Sistemas de iluminación interior y exterior</li>
-                                        <li>Diagnóstico y mediciones de sistemas electricos</li>
-                                        <li>Coordinación de protecciones</li>
-                                        <li>Cálculo de niveles de cortocircuito</li>
-                                        <li>Registro de paárametros eléctricos</li>
-                                        <li>Medición y análisis de armónicos</li>
-                                        <li>Medición y análisis de fenómenos transitorios</li>
-                                        <li>Monitoreo de redes</li>
-                                        <li>Medición de resistencia de puesta a tierra</li>
-                                        <li>Medición de resistividad de terreno</li>
-                                        <li>Medición de tensiones de paso y de contacto</li>
-                                    </ul>
-                                </div>
-                                <div class="col-lg-6 box-icon">
-                                    <div class="arrow"></div>
-                                    <div class="row box-icon-content">
-                                        <div class="icon-item">
-                                            <img src="./img/icons/retail.svg">
-                                            <span>Retail</span>
-                                        </div>
-                                        <div class="icon-item">
-                                            <img src="./img/icons/industrial.svg">
-                                            <span>Industrial</span>
-                                        </div>
-                                        <div class="icon-item">
-                                            <img src="./img/icons/infraestructure.svg">
-                                            <span>Infrestructura</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="costos" class="row content hidden">
-                                <div class="col-lg-6">
-                                    <h2>Servicios</h2>
-                                </div>
-                                <div class="col-lg-6">
-                                    <h2>Sectores</h2>
-                                </div>
-                                <div class="col-lg-6 box">
-                                    <ul>
-                                        <li>Gestión de alcance</li>
-                                        <li>Planeación, elaboración y seguimiento de cronograma de proyectos</li>
-                                        <li>Planificación y gestión de riesgos</li>
-                                        <li>Planificación y seguimiento a la gestión de compras</li>
-                                        <li>Asesoría en benchmarking</li>
-                                        <li>Capacitaciones en valor ganado y seguimiento de proyectos</li>
-                                        <li>Oficina de manejo de proyectos</li>
-                                    </ul>
-                                </div>
-                                <div class="col-lg-6 box-icon">
-                                    <div class="arrow"></div>
-                                    <div class="row box-icon-content">
-                                        <div class="icon-item">
-                                            <img src="./img/icons/salud.svg">
-                                            <span>Salud</span>
-                                        </div>
-                                        <div class="icon-item">
-                                            <img src="./img/icons/office.svg">
-                                            <span>Oficina & Coworking</span>
-                                        </div>
-                                        <div class="icon-item">
-                                            <img src="./img/icons/oil.svg">
-                                            <span>Oil & Gas</span>
-                                        </div>
-                                        <div class="icon-item">
-                                            <img src="./img/icons/infraestructure.svg">
-                                            <span>Infraestructura</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+							<div class="row button-group">
+								<div class="col-4">
+									<button data-content="arquitectura-mobile">Arquitectura comercial y
+										corporativa</button>
+								</div>
+								<div class="col-4">
+									<button data-content="electrica-mobile">Ingeniería eléctrica</button>
+								</div>
+								<div class="col-4">
+									<button data-content="costos-mobile">Ingeniería de costos</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="contentContainer" class="row services-info">
+					<div class="services-info-content">
+						<div class="d-none d-md-block">
+							<div id="arquitectura" class="row content">
+								<div class="col-lg-6">
+									<h2>Servicios</h2>
+								</div>
+								<div class="col-lg-6">
+									<h2>Sectores</h2>
+								</div>
+								<div class="col-lg-6 box">
+									<ul>
+										<li>Consultoría</li>
+										<li>Estimación de costos</li>
+										<li>Cálculo de contingencias</li>
+										<li>Valoración de planes de acción y mitigación de riesgos</li>
+										<li>Planeación y control de prespuesto</li>
+										<li>Flujos de caja y evaluación financiera de proyectos</li>
+										<li>Definición, cálculo y control de métricas</li>
+									</ul>
+								</div>
+								<div class="col-lg-6 box-icon">
+									<div class="arrow"></div>
+									<div class="row box-icon-content">
+										<div class="icon-item">
+											<img src="./img/icons/retail.svg">
+											<span>Retail</span>
+										</div>
+										<div class="icon-item">
+											<img src="./img/icons/salud.svg">
+											<span>Salud</span>
+										</div>
+										<div class="icon-item">
+											<img src="./img/icons/education.svg">
+											<span>Educación</span>
+										</div>
+										<div class="icon-item">
+											<img src="./img/icons/office.svg">
+											<span>Oficina & Coworking</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div id="electrica" class="row content hidden">
+								<div class="col-lg-6">
+									<h2>Servicios</h2>
+								</div>
+								<div class="col-lg-6">
+									<h2>Sectores</h2>
+								</div>
+								<div class="col-lg-6 box">
+									<ul>
+										<li>Sistemas de Puesta a Tierra y Protección contra descargas atmosféricas</li>
+										<li>Sistemas de protección contra descargares atmosféricas</li>
+										<li>Sistemas de protección contra sobretensiones</li>
+										<li>Instalaciones eléctricas industriales y domiciliarias</li>
+										<li>Sistemas de iluminación interior y exterior</li>
+										<li>Diagnóstico y mediciones de sistemas electricos</li>
+										<li>Coordinación de protecciones</li>
+										<li>Cálculo de niveles de cortocircuito</li>
+										<li>Registro de paárametros eléctricos</li>
+										<li>Medición y análisis de armónicos</li>
+										<li>Medición y análisis de fenómenos transitorios</li>
+										<li>Monitoreo de redes</li>
+										<li>Medición de resistencia de puesta a tierra</li>
+										<li>Medición de resistividad de terreno</li>
+										<li>Medición de tensiones de paso y de contacto</li>
+									</ul>
+								</div>
+								<div class="col-lg-6 box-icon">
+									<div class="arrow"></div>
+									<div class="row box-icon-content">
+										<div class="icon-item">
+											<img src="./img/icons/retail.svg">
+											<span>Retail</span>
+										</div>
+										<div class="icon-item">
+											<img src="./img/icons/industrial.svg">
+											<span>Industrial</span>
+										</div>
+										<div class="icon-item">
+											<img src="./img/icons/infraestructure.svg">
+											<span>Infrestructura</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div id="costos" class="row content hidden">
+								<div class="col-lg-6">
+									<h2>Servicios</h2>
+								</div>
+								<div class="col-lg-6">
+									<h2>Sectores</h2>
+								</div>
+								<div class="col-lg-6 box">
+									<ul>
+										<li>Gestión de alcance</li>
+										<li>Planeación, elaboración y seguimiento de cronograma de proyectos</li>
+										<li>Planificación y gestión de riesgos</li>
+										<li>Planificación y seguimiento a la gestión de compras</li>
+										<li>Asesoría en benchmarking</li>
+										<li>Capacitaciones en valor ganado y seguimiento de proyectos</li>
+										<li>Oficina de manejo de proyectos</li>
+									</ul>
+								</div>
+								<div class="col-lg-6 box-icon">
+									<div class="arrow"></div>
+									<div class="row box-icon-content">
+										<div class="icon-item">
+											<img src="./img/icons/salud.svg">
+											<span>Salud</span>
+										</div>
+										<div class="icon-item">
+											<img src="./img/icons/office.svg">
+											<span>Oficina & Coworking</span>
+										</div>
+										<div class="icon-item">
+											<img src="./img/icons/oil.svg">
+											<span>Oil & Gas</span>
+										</div>
+										<div class="icon-item">
+											<img src="./img/icons/infraestructure.svg">
+											<span>Infraestructura</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 
-                        <div class="d-block d-md-none">
-                            <div id="arquitectura-mobile" class="row content">
-                                <h2>Servicios</h2>
-                                <ul style="padding: 0 20px !important;">
-                                    <li>Consultoría</li>
-                                    <li>Estimación de costos</li>
-                                    <li>Cálculo de contingencias</li>
-                                    <li>Valoración de planes de acción y mitigación de riesgos</li>
-                                    <li>Planeación y control de prespuesto</li>
-                                    <li>Flujos de caja y evaluación financiera de proyectos</li>
-                                    <li>Definición, cálculo y control de métricas</li>
-                                </ul>
-                                <div class="line"></div>
-                                <div class="arrow"></div>
-                                <h2>Sectores</h2>
-                                <div class="row" style="margin: 0 5px;">
-                                    <div class="col-6 icon-item" style="margin-bottom: 20px;">
-                                        <img src="./img/icons/retail-mobile.svg">
-                                        <span>Retail</span>
-                                    </div>
-                                    <div class="col-6 icon-item">
-                                        <img src="./img/icons/salud-mobile.svg">
-                                        <span>Salud</span>
-                                    </div>
-                                    <div class="col-6 icon-item">
-                                        <img src="./img/icons/education-mobile.svg">
-                                        <span>Educación</span>
-                                    </div>
-                                    <div class="col-6 icon-item">
-                                        <img src="./img/icons/office-mobile.svg">
-                                        <span>Oficina & Coworking</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="electrica-mobile" class="row content hidden">
-                                <h2>Servicios</h2>
-                                <ul style="padding: 0 20px !important;">
-                                    <li>Sistemas de Puesta a Tierra y Protección contra descargas atmosféricas</li>
-                                    <li>Sistemas de protección contra descargares atmosféricas</li>
-                                    <li>Sistemas de protección contra sobretensiones</li>
-                                    <li>Instalaciones eléctricas industriales y domiciliarias</li>
-                                    <li>Sistemas de iluminación interior y exterior</li>
-                                    <li>Diagnóstico y mediciones de sistemas electricos</li>
-                                    <li>Coordinación de protecciones</li>
-                                    <li>Cálculo de niveles de cortocircuito</li>
-                                    <li>Registro de paárametros eléctricos</li>
-                                    <li>Medición y análisis de armónicos</li>
-                                    <li>Medición y análisis de fenómenos transitorios</li>
-                                    <li>Monitoreo de redes</li>
-                                    <li>Medición de resistencia de puesta a tierra</li>
-                                    <li>Medición de resistividad de terreno</li>
-                                    <li>Medición de tensiones de paso y de contacto</li>
-                                </ul>
-                                <div class="line"></div>
-                                <div class="arrow"></div>
-                                <h2>Sectores</h2>
-                                <div class="row" style="margin: 0 5px;">
-                                    <div class="col-6 icon-item" style="margin-bottom: 20px;">
-                                        <img src="./img/icons/retail-mobile.svg">
-                                        <span>Retail</span>
-                                    </div>
-                                    <div class="col-6 icon-item">
-                                        <img src="./img/icons/industrial-mobile.svg">
-                                        <span>Industrial</span>
-                                    </div>
-                                    <div class="col-6 icon-item">
-                                        <img src="./img/icons/infraestructure-mobile.svg">
-                                        <span>Infraestructura</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="costos-mobile" class="row content hidden">
-                                <h2>Servicios</h2>
-                                <ul style="padding: 0 20px !important;">
-                                    <li>Gestión de alcance</li>
-                                    <li>Planeación, elaboración y seguimiento de cronograma de proyectos</li>
-                                    <li>Planificación y gestión de riesgos</li>
-                                    <li>Planificación y seguimiento a la gestión de compras</li>
-                                    <li>Asesoría en benchmarking</li>
-                                    <li>Capacitaciones en valor ganado y seguimiento de proyectos</li>
-                                    <li>Oficina de manejo de proyectos</li>
-                                </ul>
-                                <div class="line"></div>
-                                <div class="arrow"></div>
-                                <h2>Sectores</h2>
-                                <div class="row" style="margin: 0 5px;">
-                                    <div class="col-6 icon-item" style="margin-bottom: 20px;">
-                                        <img src="./img/icons/salud-mobile.svg">
-                                        <span>Salud</span>
-                                    </div>
-                                    <div class="col-6 icon-item">
-                                        <img src="./img/icons/office-mobile.svg">
-                                        <span>Oficina & Coworking</span>
-                                    </div>
-                                    <div class="col-6 icon-item">
-                                        <img src="./img/icons/oil-mobile.svg">
-                                        <span>Oil & Gas</span>
-                                    </div>
-                                    <div class="col-6 icon-item">
-                                        <img src="./img/icons/infraestructure-mobile.svg">
-                                        <span>Infraestructura</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+						<div class="d-block d-md-none">
+							<div id="arquitectura-mobile" class="row content">
+								<h2>Servicios</h2>
+								<ul style="padding: 0 20px !important;">
+									<li>Consultoría</li>
+									<li>Estimación de costos</li>
+									<li>Cálculo de contingencias</li>
+									<li>Valoración de planes de acción y mitigación de riesgos</li>
+									<li>Planeación y control de prespuesto</li>
+									<li>Flujos de caja y evaluación financiera de proyectos</li>
+									<li>Definición, cálculo y control de métricas</li>
+								</ul>
+								<div class="line"></div>
+								<div class="arrow"></div>
+								<h2>Sectores</h2>
+								<div class="row" style="margin: 0 5px;">
+									<div class="col-6 icon-item" style="margin-bottom: 20px;">
+										<img src="./img/icons/retail-mobile.svg">
+										<span>Retail</span>
+									</div>
+									<div class="col-6 icon-item">
+										<img src="./img/icons/salud-mobile.svg">
+										<span>Salud</span>
+									</div>
+									<div class="col-6 icon-item">
+										<img src="./img/icons/education-mobile.svg">
+										<span>Educación</span>
+									</div>
+									<div class="col-6 icon-item">
+										<img src="./img/icons/office-mobile.svg">
+										<span>Oficina & Coworking</span>
+									</div>
+								</div>
+							</div>
+							<div id="electrica-mobile" class="row content hidden">
+								<h2>Servicios</h2>
+								<ul style="padding: 0 20px !important;">
+									<li>Sistemas de Puesta a Tierra y Protección contra descargas atmosféricas</li>
+									<li>Sistemas de protección contra descargares atmosféricas</li>
+									<li>Sistemas de protección contra sobretensiones</li>
+									<li>Instalaciones eléctricas industriales y domiciliarias</li>
+									<li>Sistemas de iluminación interior y exterior</li>
+									<li>Diagnóstico y mediciones de sistemas electricos</li>
+									<li>Coordinación de protecciones</li>
+									<li>Cálculo de niveles de cortocircuito</li>
+									<li>Registro de paárametros eléctricos</li>
+									<li>Medición y análisis de armónicos</li>
+									<li>Medición y análisis de fenómenos transitorios</li>
+									<li>Monitoreo de redes</li>
+									<li>Medición de resistencia de puesta a tierra</li>
+									<li>Medición de resistividad de terreno</li>
+									<li>Medición de tensiones de paso y de contacto</li>
+								</ul>
+								<div class="line"></div>
+								<div class="arrow"></div>
+								<h2>Sectores</h2>
+								<div class="row" style="margin: 0 5px;">
+									<div class="col-6 icon-item" style="margin-bottom: 20px;">
+										<img src="./img/icons/retail-mobile.svg">
+										<span>Retail</span>
+									</div>
+									<div class="col-6 icon-item">
+										<img src="./img/icons/industrial-mobile.svg">
+										<span>Industrial</span>
+									</div>
+									<div class="col-6 icon-item">
+										<img src="./img/icons/infraestructure-mobile.svg">
+										<span>Infraestructura</span>
+									</div>
+								</div>
+							</div>
+							<div id="costos-mobile" class="row content hidden">
+								<h2>Servicios</h2>
+								<ul style="padding: 0 20px !important;">
+									<li>Gestión de alcance</li>
+									<li>Planeación, elaboración y seguimiento de cronograma de proyectos</li>
+									<li>Planificación y gestión de riesgos</li>
+									<li>Planificación y seguimiento a la gestión de compras</li>
+									<li>Asesoría en benchmarking</li>
+									<li>Capacitaciones en valor ganado y seguimiento de proyectos</li>
+									<li>Oficina de manejo de proyectos</li>
+								</ul>
+								<div class="line"></div>
+								<div class="arrow"></div>
+								<h2>Sectores</h2>
+								<div class="row" style="margin: 0 5px;">
+									<div class="col-6 icon-item" style="margin-bottom: 20px;">
+										<img src="./img/icons/salud-mobile.svg">
+										<span>Salud</span>
+									</div>
+									<div class="col-6 icon-item">
+										<img src="./img/icons/office-mobile.svg">
+										<span>Oficina & Coworking</span>
+									</div>
+									<div class="col-6 icon-item">
+										<img src="./img/icons/oil-mobile.svg">
+										<span>Oil & Gas</span>
+									</div>
+									<div class="col-6 icon-item">
+										<img src="./img/icons/infraestructure-mobile.svg">
+										<span>Infraestructura</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 
-            <div class="tab-pane fade" id="pills-gallery" role="tabpanel" aria-labelledby="pills-gallery-tab">
-                <div class="pills-gallery">
-                    <div class="gallery-content">
-                        <h2>Experiencia</h2>
-                        <div class="tz-gallery d-none d-md-block">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <a class="lightbox" href="./img/gallery/gallery_1.png"
-                                        data-caption="Descripción de la gallery 1">
-                                        <img src="./img/gallery/gallery_1.png" alt="gallery_1" loading="lazy">
-                                    </a>
-                                </div>
-                                <div class="col-md-4">
-                                    <a class="lightbox" href="./img/gallery/gallery_2.png"
-                                        data-caption="Descripción de la gallery 2">
-                                        <img src="./img/gallery/gallery_2.png" alt="gallery_2" loading="lazy">
-                                    </a>
-                                </div>
-                                <div class="col-md-4">
-                                    <a class="lightbox" href="./img/gallery/gallery_3.png"
-                                        data-caption="Descripción de la gallery 3">
-                                        <img src="./img/gallery/gallery_3.png" alt="gallery_3" loading="lazy">
-                                    </a>
-                                </div>
-                                <div class="col-md-4">
-                                    <a class="lightbox" href="./img/gallery/gallery_4.png"
-                                        data-caption="Descripción de la gallery 4">
-                                        <img src="./img/gallery/gallery_4.png" alt="gallery_4" loading="lazy">
-                                    </a>
-                                </div>
-                                <div class="col-md-4">
-                                    <a class="lightbox" href="./img/gallery/gallery_5.png"
-                                        data-caption="Descripción de la gallery 5">
-                                        <img src="./img/gallery/gallery_5.png" alt="gallery_5" loading="lazy">
-                                    </a>
-                                </div>
-                                <div class="col-md-4">
-                                    <a class="lightbox" href="./img/gallery/gallery_6.png"
-                                        data-caption="Descripción de la gallery 6">
-                                        <img src="./img/gallery/gallery_6.png" alt="gallery_6" loading="lazy">
-                                    </a>
-                                </div>
-                                <div class="col-md-4">
-                                    <a class="lightbox" href="./img/gallery/gallery_7.png"
-                                        data-caption="Descripción de la gallery 7">
-                                        <img src="./img/gallery/gallery_7.png" alt="gallery_7" loading="lazy">
-                                    </a>
-                                </div>
-                                <div class="col-md-4">
-                                    <a class="lightbox" href="./img/gallery/gallery_8.png"
-                                        data-caption="Descripción de la gallery 8">
-                                        <img src="./img/gallery/gallery_8.png" alt="gallery_8" loading="lazy">
-                                    </a>
-                                </div>
-                                <div class="col-md-4">
-                                    <a class="lightbox" href="./img/gallery/gallery_9.png"
-                                        data-caption="Descripción de la gallery 9">
-                                        <img src="./img/gallery/gallery_9.png" alt="gallery_9" loading="lazy">
-                                    </a>
-                                </div>
-                                <div class="col-md-4">
-                                    <a class="lightbox" href="./img/gallery/gallery_10.png"
-                                        data-caption="Descripción de la gallery 10">
-                                        <img src="./img/gallery/gallery_10.png" alt="gallery_10" loading="lazy">
-                                    </a>
-                                </div>
-                                <div class="col-md-4">
-                                    <a class="lightbox" href="./img/gallery/gallery_11.png"
-                                        data-caption="Descripción de la gallery 11">
-                                        <img src="./img/gallery/gallery_11.png" alt="gallery_11" loading="lazy">
-                                    </a>
-                                </div>
-                                <div class="col-md-4">
-                                    <a class="lightbox" href="./img/gallery/gallery_12.png"
-                                        data-caption="Descripción de la gallery 12">
-                                        <img src="./img/gallery/gallery_12.png" alt="gallery_12" loading="lazy">
-                                    </a>
-                                </div>
-                                <div class="col-md-4">
-                                    <a class="lightbox" href="./img/gallery/gallery_13.png"
-                                        data-caption="Descripción de la gallery 13">
-                                        <img src="./img/gallery/gallery_13.png" alt="gallery_13" loading="lazy">
-                                    </a>
-                                </div>
-                                <div class="col-md-4">
-                                    <a class="lightbox" href="./img/gallery/gallery_14.png"
-                                        data-caption="Descripción de la gallery 14">
-                                        <img src="./img/gallery/gallery_14.png" alt="gallery_14" loading="lazy">
-                                    </a>
-                                </div>
-                                <div class="col-md-4">
-                                    <a class="lightbox" href="./img/gallery/gallery_15.png"
-                                        data-caption="Descripción de la gallery 15">
-                                        <img src="./img/gallery/gallery_15.png" alt="gallery_15" loading="lazy">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="carouselGallery" class="carousel slide d-block d-md-none" data-bs-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="./img/gallery/gallery_1.png" class="d-block w-100" alt="gallery_1">
-                                    <div class="carousel-caption d-block">
-                                        <p>Descripción de la gallery 1</p>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="./img/gallery/gallery_2.png" class="d-block w-100" alt="gallery_2">
-                                    <div class="carousel-caption d-block">
-                                        <p>Descripción de la gallery 2</p>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="./img/gallery/gallery_3.png" class="d-block w-100" alt="gallery_3">
-                                    <div class="carousel-caption d-block">
-                                        <p>Descripción de la gallery 3</p>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="./img/gallery/gallery_4.png" class="d-block w-100" alt="gallery_4">
-                                    <div class="carousel-caption d-block">
-                                        <p>Descripción de la gallery 4</p>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="./img/gallery/gallery_5.png" class="d-block w-100" alt="gallery_5">
-                                    <div class="carousel-caption d-block">
-                                        <p>Descripción de la gallery 5</p>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="./img/gallery/gallery_6.png" class="d-block w-100" alt="gallery_6">
-                                    <div class="carousel-caption d-block">
-                                        <p>Descripción de la gallery 6</p>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="./img/gallery/gallery_7.png" class="d-block w-100" alt="gallery_7">
-                                    <div class="carousel-caption d-block">
-                                        <p>Descripción de la gallery 7</p>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="./img/gallery/gallery_8.png" class="d-block w-100" alt="gallery_8">
-                                    <div class="carousel-caption d-block">
-                                        <p>Descripción de la gallery 8</p>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="./img/gallery/gallery_9.png" class="d-block w-100" alt="gallery_9">
-                                    <div class="carousel-caption d-block">
-                                        <p>Descripción de la gallery 9</p>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="./img/gallery/gallery_10.png" class="d-block w-100" alt="gallery_10">
-                                    <div class="carousel-caption d-block">
-                                        <p>Descripción de la gallery 10</p>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="./img/gallery/gallery_11.png" class="d-block w-100" alt="gallery_11">
-                                    <div class="carousel-caption d-block">
-                                        <p>Descripción de la gallery 11</p>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="./img/gallery/gallery_12.png" class="d-block w-100" alt="gallery_12">
-                                    <div class="carousel-caption d-block">
-                                        <p>Descripción de la gallery 12</p>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="./img/gallery/gallery_13.png" class="d-block w-100" alt="gallery_13">
-                                    <div class="carousel-caption d-block">
-                                        <p>Descripción de la gallery 13</p>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="./img/gallery/gallery_14.png" class="d-block w-100" alt="gallery_14">
-                                    <div class="carousel-caption d-block">
-                                        <p>Descripción de la gallery 14</p>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="./img/gallery/gallery_15.png" class="d-block w-100" alt="gallery_15">
-                                    <div class="carousel-caption d-block">
-                                        <p>Descripción de la gallery 15</p>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="./img/gallery/gallery_16.png" class="d-block w-100" alt="gallery_16">
-                                    <div class="carousel-caption d-block">
-                                        <p>Descripción de la gallery 16</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselGallery"
-                                data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Anterior</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carouselGallery"
-                                data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Siguiente</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+			<div class="tab-pane fade" id="pills-gallery" role="tabpanel" aria-labelledby="pills-gallery-tab">
+				<div class="pills-gallery">
+					<div class="gallery-content">
+						<h2>Experiencia</h2>
+						<div class="gallery-categories">
+							<div class="category" id="category1">
+								<h3>Categoría 1</h3>
+								<div class="category-gallery">
+									<div class="col-md-4">
+										<a href="#" data-bs-toggle="modal" data-bs-target="#projectModal"
+											data-project="1">
+											<img src="./img/gallery/gallery_1.png" alt="Proyecto 1" loading="lazy">
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="category" id="category2">
+								<h3>Categoría 2</h3>
+								<div class="category-gallery">
+									<div class="col-md-4">
+										<a href="#" data-bs-toggle="modal" data-bs-target="#projectModal"
+											data-project="2">
+											<img src="./img/gallery/gallery_2.png" alt="Proyecto 2" loading="lazy">
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 
-            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-                <div class="pills-contact">
-                    <div class="contact-content">
-                        <div class="col-lg-12">
-                            <h2>Contacto</h2>
-                        </div>
-                        <div class="contact-form">
-                            <form id="contactForm" onsubmit="submitForm(event)">
-                                <input type="text" placeholder="Nombre - empresa" id="name" required>
-                                <input type="email" placeholder="Correo electrónico" id="email" required>
-                                <input type="tel" placeholder="Teléfono - móvil" id="phone" required>
-                                <input type="text" placeholder="Dirección - Departamento" id="country" required>
-                                <div class="text-end">
-                                    <button type="submit">Enviar</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+			<div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+				<div class="pills-contact">
+					<div class="contact-content">
+						<div class="col-lg-12">
+							<h2>Contacto</h2>
+						</div>
+						<div class="contact-form">
+							<form id="contactForm" onsubmit="submitForm(event)">
+								<input type="text" placeholder="Nombre - empresa" id="name" required>
+								<input type="email" placeholder="Correo electrónico" id="email" required>
+								<input type="tel" placeholder="Teléfono - móvil" id="phone" required>
+								<input type="text" placeholder="Dirección - Departamento" id="country" required>
+								<div class="text-end">
+									<button type="submit">Enviar</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="module" src="./js/index.js"></script>
+		<div class="floating-buttons">
+			<button id="scroll-back-btn" class="scroll-button">
+				<i class="fas fa-chevron-left"></i>
+			</button>
+			<button id="scroll-next-btn" class="scroll-button">
+				<i class="fas fa-chevron-right"></i>
+			</button>
+		</div>
+
+		<footer class="footer">
+			<div class="footer-container">
+				<div class="footer-content">
+					<img src="./img/logo.png" alt="Logo de Pring" class="footer-logo">
+					<p><strong>Correo electrónico</strong><a href="mailto:contacto@pring.co" style="text-decoration: none; color: #fff;"><br>contacto@pring.co</a></p>
+					<p><strong>Contacto</strong><a href="" style="text-decoration: none; color: #fff;"><br>+57 311 522 6967</a></p>
+				</div>
+				<div class="footer-bottom">
+					<p>&copy; 2025 Pring. Todos los derechos reservados.</p>
+				</div>
+			</div>
+		</footer>
+	</div>
+
+	<div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="projectModalLabel">Detalles del Proyecto</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
+						<div class="carousel-inner" id="carouselContent"></div>
+						<button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel"
+							data-bs-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Anterior</span>
+						</button>
+						<button class="carousel-control-next" type="button" data-bs-target="#projectCarousel"
+							data-bs-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Siguiente</span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="module" src="./js/index.js"></script>
 </body>
 
 </html>
