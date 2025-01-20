@@ -52,7 +52,7 @@ This webpage features an **elegant, modern, and dynamic design**, with ✨ *subt
 ## ⚙️ How to Use This Project  
 1. Clone this repository:  
    ```bash  
-   git clone https://github.com/your-user/pring-web.git  
+   git clone https://github.com/your-user/pring-web.git
    ```  
 2. Open the `index.html` file in your browser to view the webpage.  
 
