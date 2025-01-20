@@ -50,6 +50,16 @@ export function handleScroll() {
 	const scrollBackBtn = document.getElementById("scroll-back-btn");
 	const scrollNextBtn = document.getElementById("scroll-next-btn");
 
+	function isMobile() {
+		return window.innerWidth <= 768;
+	}
+
+	if (isMobile()) {
+		scrollBackBtn.style.display = "none";
+		scrollNextBtn.style.display = "none";
+		return;
+	}
+
 	function checkNavigationButtons() {
 		const activeLink = document.querySelector('.nav-link.active');
 		const nextLink = activeLink.closest('li').nextElementSibling;

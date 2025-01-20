@@ -241,6 +241,7 @@ p {
 
 		.footer-content {
 			display: flex;
+			flex-direction: row;
 			justify-content: space-between;
 			text-align: center;
 			align-items: center;
@@ -280,7 +281,7 @@ p {
     transform: translateY(-50%);
     z-index: 1000;
     display: none;
-	padding: 0 120px 0 80px;
+	padding: 0 10px;
 
 	.scroll-button {
 		background-color: black;
@@ -457,6 +458,17 @@ p {
             }
         }
     }
+
+	.footer {
+		.footer-container {
+			.footer-content {
+				display: flex;
+				gap: 30px;
+				flex-direction: column;
+				justify-content: center;
+			}
+		}
+	}
 }
 ::-webkit-scrollbar {
   width: 5px;
