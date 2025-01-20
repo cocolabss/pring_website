@@ -8,6 +8,7 @@ body {
     height: 100%;
     scroll-behavior: smooth;
     overflow-x: hidden;
+	overflow-y: scroll;
     background-color: #000;
 }
 
@@ -226,12 +227,86 @@ p {
     }
 }
 
+.footer {
+    background-color: #000;
+	display: flex;
+	justify-content: center;
+    color: #fff;
+    padding: 40px 0 20px 0;
+    bottom: 0;
+    font-size: 14px;
+
+	.footer-container {
+		width: 1400px;
+
+		.footer-content {
+			display: flex;
+			justify-content: space-between;
+			text-align: center;
+			align-items: center;
+			padding: 0 20px;
+
+			.footer-logo {
+				width: 100px;
+			}
+		}
+
+		.footer-bottom {
+			text-align: center;
+			margin-top: 20px;
+		}
+
+		.footer-bottom p {
+			font-size: 12px;
+			margin: 0;
+		}
+	}
+}
+
 .desktop-content {
     display: flex;
 }
 
 .mobile-content {
     display: none;
+}
+
+.floating-buttons {
+    position: fixed;
+	display: flex !important;
+	justify-content: space-between;
+	width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    display: none;
+	padding: 0 120px 0 80px;
+
+	.scroll-button {
+		background-color: black;
+		color: white;
+		border: none;
+		padding: 20px;
+		border-radius: 50%;
+		font-size: 20px;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: background-color 0.3s ease;
+	}
+
+	.scroll-button:hover {
+		background-color: #333;
+	}
+
+	#scroll-back-btn {
+		left: 10px;
+	}
+
+	#scroll-next-btn {
+		right: 10px;
+	}
 }
 
 @media (max-width: 992px) {
@@ -382,4 +457,22 @@ p {
             }
         }
     }
+}
+::-webkit-scrollbar {
+  width: 5px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: white;
+  border-radius: 50px;
+  border: 1px solid transparent;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #fff;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
 }
