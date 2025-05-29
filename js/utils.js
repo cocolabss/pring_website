@@ -116,36 +116,86 @@ export function handleScroll() {
 	checkNavigationButtons();
 }
 
+
+const projects = {
+	1: {
+		title: 'Juan Valdez - Plaza de las Américas',
+		images: [
+			{ src: './img/gallery/category_1/1.jpeg', alt: 'Imagen 1A' },
+			{ src: './img/gallery/category_1/2.jpeg', alt: 'Imagen 1B' },
+			{ src: './img/gallery/category_1/3.jpeg', alt: 'Imagen 1C' },
+			{ src: './img/gallery/category_1/4.jpeg', alt: 'Imagen 1D' },
+			{ src: './img/gallery/category_1/5.jpeg', alt: 'Imagen 1E' },
+		]
+	},
+	2: {
+		title: 'Tus Oficinas - Edificio Elemento',
+		images: [
+			{ src: './img/gallery/category_2/1.jpg', alt: 'Imagen 2A' },
+			{ src: './img/gallery/category_2/2.jpg', alt: 'Imagen 2B' },
+			{ src: './img/gallery/category_2/3.jpg', alt: 'Imagen 2C' },
+			{ src: './img/gallery/category_2/4.jpg', alt: 'Imagen 2D' },
+			{ src: './img/gallery/category_2/5.jpg', alt: 'Imagen 2E' },
+		]
+	},
+	3: {
+		title: 'La Hipotecaria - Av El Dorado',
+		images: [
+			{ src: './img/gallery/category_3/1.jpeg', alt: 'Imagen 3A' },
+			{ src: './img/gallery/category_3/2.jpeg', alt: 'Imagen 3B' },
+			{ src: './img/gallery/category_3/3.jpg', alt: 'Imagen 3C' }
+		]
+	},
+	4: {
+		title: 'López & Sohm - Edificio Coasmedas',
+		images: [
+			{ src: './img/gallery/category_4/1.jpeg', alt: 'Imagen 4A' },
+			{ src: './img/gallery/category_4/2.jpeg', alt: 'Imagen 4B' },
+			{ src: './img/gallery/category_4/3.jpeg', alt: 'Imagen 4C' },
+			{ src: './img/gallery/category_4/4.jpeg', alt: 'Imagen 4D' },
+			{ src: './img/gallery/category_4/5.jpeg', alt: 'Imagen 4E' },
+			{ src: './img/gallery/category_4/6.jpeg', alt: 'Imagen 4F' },
+			{ src: './img/gallery/category_4/7.jpeg', alt: 'Imagen 4G' },
+		]
+	}
+};
+
+
 export function galleryCarousel() {
 	const modal = document.getElementById('projectModal');
 	const carouselContent = document.getElementById('carouselContent');
+	const projectTitle = document.getElementById('projectModalTitle');
 
-	const projects = {
-		1: [
-			{ src: './img/gallery/gallery_1.png', alt: 'Imagen 1' },
-			{ src: './img/gallery/gallery_1b.png', alt: 'Imagen 1B' },
-			{ src: './img/gallery/gallery_1c.png', alt: 'Imagen 1C' }
-		],
-		2: [
-			{ src: './img/gallery/gallery_2.png', alt: 'Imagen 2' },
-			{ src: './img/gallery/gallery_2b.png', alt: 'Imagen 2B' }
-		]
-	};
+	let currentCarousel = null;
 
 	modal.addEventListener('show.bs.modal', (event) => {
 		const button = event.relatedTarget;
 		const projectId = button.getAttribute('data-project');
-		const images = projects[projectId] || [];
+		const project = projects[projectId];
+		const images = project?.images || [];
 
 		carouselContent.innerHTML = images
 			.map(
 				(img, index) => `
-            <div class="carousel-item ${index === 0 ? 'active' : ''}">
-                <img src="${img.src}" class="d-block w-100" alt="${img.alt}">
-            </div>
-        `
+					<div class="carousel-item ${index === 0 ? 'active' : ''}">
+						<img src="${img.src}" class="d-block w-100" alt="${img.alt}">
+					</div>
+				`
 			)
 			.join('');
+
+		if (projectTitle && project?.title) {
+			projectTitle.textContent = project.title;
+		}
+
+		if (currentCarousel) {
+			currentCarousel.dispose();
+		}
+
+		currentCarousel = new bootstrap.Carousel(document.getElementById('projectCarousel'), {
+			interval: 5000,
+			ride: 'carousel'
+		});
 	});
 }
 
