@@ -23,7 +23,7 @@
                 }
 
                 .button-group {
-                    height: 182px !important;
+                    height: 180px !important;
 
                     .col-4 {
                         display: flex;
@@ -66,12 +66,16 @@
     background-color: #F7B733 !important;
 }
 
+.margin-servicios {
+    margin: 25px 0 !important;
+}
+
 .services-info {
     background-color: #4ABCAD;
     justify-content: center;
 
     .services-info-content {
-        width: 1400px;
+        max-width: 1200px;
 
         .content {
             margin-bottom: 80px;
@@ -104,6 +108,11 @@
                         align-items: center;
                         gap: 20px;
                         margin: 20px 0;
+                    }
+
+                    .icon-item img {
+                        height: 40px !important;
+                        width: auto !important;
                     }
                 }
             }

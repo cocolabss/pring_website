@@ -20,7 +20,7 @@ body {
 
 body {
     font-family: 'Montserrat', sans-serif;
-    font-size: 24px;
+    font-size: 16px;
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -30,16 +30,12 @@ h3 {
     margin: 40px 0;
 }
 
-h2 {
-    font-size: 64px;
-}
-
-h3 {
-    font-size: 40px;
+h2, h3 {
+    font-size: 32px;
 }
 
 h4 {
-    font-size: 32px;
+    font-size: 16px;
 }
 
 p {
@@ -192,6 +188,10 @@ p {
     justify-content: center;
 }
 
+.nav-item {
+    font-size: 18px;
+}
+
 .navbar {
     background-color: #000;
     color: #fff;
@@ -320,6 +320,14 @@ p {
 
 .margen-bottom {
     margin: 0 0 40px 0 !important;
+}
+
+.img-servicios {
+    max-height: 420px !important;
+}
+
+.padding-servicios {
+    padding: 0 0 0 50px !important;
 }
 
 @media (max-width: 1024px) {

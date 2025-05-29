@@ -41,8 +41,8 @@ h2, h3, h4 {
 }
 
 .category-gallery img {
-    width: 100%;
-    height: auto;
+    width: auto;
+    max-height: 400px;
     cursor: pointer;
     transition: transform 0.3s ease;
 }
@@ -121,4 +121,131 @@ h3 {
 
 .carousel-control-next-icon {
     transform: rotate(-45deg);
+}
+
+.gallery-categories {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.category {
+    margin-bottom: 50px;
+}
+
+.margen-web {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.carousel-container {
+    position: relative;
+    width: 80%;
+    max-width: 900px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.carousel-track {
+    display: flex;
+    height: 100%;
+    animation: slideInfinite 15s linear infinite;
+    gap: 15px;
+}
+
+.carousel-slide {
+    flex-shrink: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-slide img {
+    max-width: 400px;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    border-radius: 8px;
+}
+
+@keyframes slideInfinite {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 6px;
+}
+
+.indicator {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.6);
+    transition: background-color 0.3s ease;
+}
+
+.indicator.active {
+    background-color: rgba(255,255,255,0.9);
+}
+
+.justify-content-left {
+    justify-content: flex-start !important;
+}
+
+.justify-content-right {
+    justify-content: flex-end !important;
+}
+
+@media (max-width: 768px) {
+    .gallery-categories {
+        padding: 0px 400px !important;
+    }
+    
+    .carousel-container {
+        width: 100%;
+        max-width: 100%;
+        height: 200px;
+        margin: 0;
+    }
+    
+    .carousel-slide {
+        max-width: 200px;
+    }
+    
+    .carousel-slide img {
+        max-width: 200px;
+    }
+    
+    .col-12 {
+        padding: 0 !important;
+    }
+    
+    .col-12.d-flex.justify-content-left,
+    .col-12.d-flex.justify-content-right {
+        justify-content: flex-start !important;
+    }
+    
+    .margen-web {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+.carousel-track:hover {
+    animation-play-state: paused;
 }

@@ -89,8 +89,8 @@
 							<h2 class="margen-bottom">Servicios</h2>
 						</div>
 						<div class="row d-none d-md-flex">
-							<div class="col-lg-6">
-								<img src="./img/img_4.png" alt="Interior design" class="img-fluid">
+							<div class="col-lg-6 d-flex justify-content-end">
+								<img src="./img/img_4.png" alt="Interior design" class="img-fluid img-servicios">
 							</div>
 							<div class="col-lg-6 content">
 								<p class="description">
@@ -158,11 +158,11 @@
 					<div class="services-info-content">
 						<div class="d-none d-md-block">
 							<div id="arquitectura" class="row content">
-								<div class="col-lg-6">
-									<h2>Servicios</h2>
+								<div class="col-lg-6 padding-servicios">
+									<h2 class="margin-servicios">Servicios</h2>
 								</div>
-								<div class="col-lg-6">
-									<h2>Sectores</h2>
+								<div class="col-lg-6 padding-servicios">
+									<h2 class="margin-servicios">Sectores</h2>
 								</div>
 								<div class="col-lg-6 box">
 									<ul>
@@ -198,11 +198,11 @@
 								</div>
 							</div>
 							<div id="electrica" class="row content hidden">
-								<div class="col-lg-6">
-									<h2>Servicios</h2>
+								<div class="col-lg-6 padding-servicios">
+									<h2 class="margin-servicios">Servicios</h2>
 								</div>
-								<div class="col-lg-6">
-									<h2>Sectores</h2>
+								<div class="col-lg-6 padding-servicios">
+									<h2 class="margin-servicios">Sectores</h2>
 								</div>
 								<div class="col-lg-6 box">
 									<ul>
@@ -242,11 +242,11 @@
 								</div>
 							</div>
 							<div id="costos" class="row content hidden">
-								<div class="col-lg-6">
-									<h2>Servicios</h2>
+								<div class="col-lg-6 padding-servicios">
+									<h2 class="margin-servicios">Servicios</h2>
 								</div>
-								<div class="col-lg-6">
-									<h2>Sectores</h2>
+								<div class="col-lg-6 padding-servicios">
+									<h2 class="margin-servicios">Sectores</h2>
 								</div>
 								<div class="col-lg-6 box">
 									<ul>
@@ -394,48 +394,66 @@
 
 			<div class="tab-pane fade" id="pills-gallery" role="tabpanel" aria-labelledby="pills-gallery-tab">
 				<div class="pills-gallery">
-					<div class="gallery-content">
-						<div class="col-lg-12 px-4 px-md-0 text-center">
-							<h2 class="margen-bottom">Experiencia</h2>
+					<div class="gallery-categories">
+						<div class="category" id="category1">
+							<h4 class="margen-web mb-4">Juan Valdez - Plaza de las Américas</h4>
+							<div class="category-gallery">
+								<div class="col-12 d-flex justify-content-left">
+									<div class="carousel-container" data-project="1">
+										<div class="carousel-track">
+											<!-- Las imágenes se cargarán dinámicamente -->
+										</div>
+										<div class="carousel-indicators">
+											<!-- Los indicadores se cargarán dinámicamente -->
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
-						<div class="gallery-categories">
-							<div class="category" id="category1">
-								<h4 class="margen-web mb-4">Juan Valdez - Plaza de las Américas</h4>
-								<div class="category-gallery">
-									<div class="col-md-4">
-										<a href="#" data-bs-toggle="modal" data-bs-target="#projectModal" data-project="1">
-											<img src="./img/gallery/category_1/1.jpeg" alt="Proyecto 1" loading="lazy">
-										</a>
+						
+						<div class="category" id="category2">
+							<h4 class="margen-web mb-4">Tus Oficinas - Edificio Elemento</h4>
+							<div class="category-gallery">
+								<div class="col-12 d-flex justify-content-right">
+									<div class="carousel-container" data-project="2">
+										<div class="carousel-track">
+											<!-- Las imágenes se cargarán dinámicamente -->
+										</div>
+										<div class="carousel-indicators">
+											<!-- Los indicadores se cargarán dinámicamente -->
+										</div>
 									</div>
 								</div>
 							</div>
-							<div class="category" id="category2">
-								<h4 class="margen-web mb-4">Tus Oficinas - Edificio Elemento</h4>
-								<div class="category-gallery">
-									<div class="col-md-4">
-										<a href="#" data-bs-toggle="modal" data-bs-target="#projectModal" data-project="2">
-											<img src="./img/gallery/category_2/1.jpg" alt="Proyecto 2" loading="lazy">
-										</a>
+						</div>
+						
+						<div class="category" id="category3">
+							<h4 class="margen-web mb-4">La Hipotecaria - Av El Dorado</h4>
+							<div class="category-gallery">
+								<div class="col-12 d-flex justify-content-left">
+									<div class="carousel-container" data-project="3">
+										<div class="carousel-track">
+											<!-- Las imágenes se cargarán dinámicamente -->
+										</div>
+										<div class="carousel-indicators">
+											<!-- Los indicadores se cargarán dinámicamente -->
+										</div>
 									</div>
 								</div>
 							</div>
-							<div class="category" id="category3">
-								<h4 class="margen-web mb-4">La Hipotecaria - Av El Dorado</h4>
-								<div class="category-gallery">
-									<div class="col-md-4">
-										<a href="#" data-bs-toggle="modal" data-bs-target="#projectModal" data-project="3">
-											<img src="./img/gallery/category_3/1.jpeg" alt="Proyecto 3" loading="lazy">
-										</a>
-									</div>
-								</div>
-							</div>
-							<div class="category" id="category4">
-								<h4 class="margen-web mb-4">López & Sohm - Edificio Coasmedas</h4>
-								<div class="category-gallery">
-									<div class="col-md-4">
-										<a href="#" data-bs-toggle="modal" data-bs-target="#projectModal" data-project="4">
-											<img src="./img/gallery/category_4/1.jpeg" alt="Proyecto 4" loading="lazy">
-										</a>
+						</div>
+						
+						<div class="category" id="category4">
+							<h4 class="margen-web mb-4">López & Sohm - Edificio Coasmedas</h4>
+							<div class="category-gallery">
+								<div class="col-12 d-flex justify-content-right">
+									<div class="carousel-container" data-project="4">
+										<div class="carousel-track">
+											<!-- Las imágenes se cargarán dinámicamente -->
+										</div>
+										<div class="carousel-indicators">
+											<!-- Los indicadores se cargarán dinámicamente -->
+										</div>
 									</div>
 								</div>
 							</div>

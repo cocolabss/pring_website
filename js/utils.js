@@ -160,43 +160,63 @@ const projects = {
 	}
 };
 
+class InfiniteCarousel {
+            constructor(container, projectId) {
+                this.container = container;
+                this.projectId = projectId;
+                this.images = projects[projectId].images;
+                this.track = container.querySelector('.carousel-track');
+                this.indicatorsContainer = container.querySelector('.carousel-indicators');
+                
+                this.init();
+            }
+
+            init() {
+                this.createInfiniteSlides();
+                this.createIndicators();
+                this.setAnimationDuration();
+            }
+
+            createInfiniteSlides() {
+                this.track.innerHTML = '';
+                
+                // Duplicar las imágenes para crear el efecto infinito
+                const allImages = [...this.images, ...this.images];
+                
+                allImages.forEach((image, index) => {
+                    const slide = document.createElement('div');
+                    slide.className = 'carousel-slide';
+                    slide.innerHTML = `<img src="${image.src}" alt="${image.alt}" loading="lazy">`;
+                    this.track.appendChild(slide);
+                });
+            }
+
+            createIndicators() {
+                this.indicatorsContainer.innerHTML = '';
+                this.images.forEach((_, index) => {
+                    const indicator = document.createElement('div');
+                    indicator.className = 'indicator';
+                    this.indicatorsContainer.appendChild(indicator);
+                });
+            }
+
+            setAnimationDuration() {
+                // Ajustar la duración basada en el número de imágenes
+                const duration = this.images.length * 3; // 3 segundos por imagen
+                this.track.style.animationDuration = `${duration}s`;
+            }
+        }
+
 
 export function galleryCarousel() {
-	const modal = document.getElementById('projectModal');
-	const carouselContent = document.getElementById('carouselContent');
-	const projectTitle = document.getElementById('projectModalTitle');
-
-	let currentCarousel = null;
-
-	modal.addEventListener('show.bs.modal', (event) => {
-		const button = event.relatedTarget;
-		const projectId = button.getAttribute('data-project');
-		const project = projects[projectId];
-		const images = project?.images || [];
-
-		carouselContent.innerHTML = images
-			.map(
-				(img, index) => `
-					<div class="carousel-item ${index === 0 ? 'active' : ''}">
-						<img src="${img.src}" class="d-block w-100" alt="${img.alt}">
-					</div>
-				`
-			)
-			.join('');
-
-		if (projectTitle && project?.title) {
-			projectTitle.textContent = project.title;
-		}
-
-		if (currentCarousel) {
-			currentCarousel.dispose();
-		}
-
-		currentCarousel = new bootstrap.Carousel(document.getElementById('projectCarousel'), {
-			interval: 5000,
-			ride: 'carousel'
-		});
-	});
+	const carouselContainers = document.querySelectorAll('.carousel-container');
+            
+            carouselContainers.forEach(container => {
+                const projectId = container.getAttribute('data-project');
+                if (projects[projectId]) {
+                    new InfiniteCarousel(container, projectId);
+                }
+            });
 }
 
 
