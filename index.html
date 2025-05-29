@@ -85,8 +85,8 @@
 			<div class="tab-pane fade" id="pills-services" role="tabpanel" aria-labelledby="pills-services-tab">
 				<div class="pills-services">
 					<div class="services-content">
-						<div class="col-lg-12">
-							<h2>Servicios</h2>
+						<div class="col-lg-12 px-4 px-md-0 text-center">
+							<h2 class="margen-bottom">Servicios</h2>
 						</div>
 						<div class="row d-none d-md-flex">
 							<div class="col-lg-6">
@@ -110,14 +110,14 @@
 								<h3>Gestión de proyectos</h3>
 								<div class="row button-group">
 									<div class="col-4">
-										<button data-content="arquitectura">Arquitectura comercial y
-											corporativa</button>
+										<button data-content="arquitectura"><span style="color: black !important;">Arquitectura comercial y
+											corporativa</span></button>
 									</div>
 									<div class="col-4">
-										<button data-content="electrica">Ingeniería eléctrica</button>
+										<button data-content="electrica"><span style="color: black !important;">Ingeniería eléctrica</span></button>
 									</div>
 									<div class="col-4">
-										<button data-content="costos">Ingeniería de costos</button>
+										<button data-content="costos"><span style="color: black !important;">Ingeniería de costos</span></button>
 									</div>
 								</div>
 							</div>
@@ -395,26 +395,46 @@
 			<div class="tab-pane fade" id="pills-gallery" role="tabpanel" aria-labelledby="pills-gallery-tab">
 				<div class="pills-gallery">
 					<div class="gallery-content">
-						<h2>Experiencia</h2>
+						<div class="col-lg-12 px-4 px-md-0 text-center">
+							<h2 class="margen-bottom">Experiencia</h2>
+						</div>
 						<div class="gallery-categories">
 							<div class="category" id="category1">
-								<h3>Categoría 1</h3>
+								<h4 class="margen-web mb-4">Juan Valdez - Plaza de las Américas</h4>
 								<div class="category-gallery">
 									<div class="col-md-4">
-										<a href="#" data-bs-toggle="modal" data-bs-target="#projectModal"
-											data-project="1">
-											<img src="./img/gallery/gallery_1.png" alt="Proyecto 1" loading="lazy">
+										<a href="#" data-bs-toggle="modal" data-bs-target="#projectModal" data-project="1">
+											<img src="./img/gallery/category_1/1.jpeg" alt="Proyecto 1" loading="lazy">
 										</a>
 									</div>
 								</div>
 							</div>
 							<div class="category" id="category2">
-								<h3>Categoría 2</h3>
+								<h4 class="margen-web mb-4">Tus Oficinas - Edificio Elemento</h4>
 								<div class="category-gallery">
 									<div class="col-md-4">
-										<a href="#" data-bs-toggle="modal" data-bs-target="#projectModal"
-											data-project="2">
-											<img src="./img/gallery/gallery_2.png" alt="Proyecto 2" loading="lazy">
+										<a href="#" data-bs-toggle="modal" data-bs-target="#projectModal" data-project="2">
+											<img src="./img/gallery/category_2/1.jpg" alt="Proyecto 2" loading="lazy">
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="category" id="category3">
+								<h4 class="margen-web mb-4">La Hipotecaria - Av El Dorado</h4>
+								<div class="category-gallery">
+									<div class="col-md-4">
+										<a href="#" data-bs-toggle="modal" data-bs-target="#projectModal" data-project="3">
+											<img src="./img/gallery/category_3/1.jpeg" alt="Proyecto 3" loading="lazy">
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="category" id="category4">
+								<h4 class="margen-web mb-4">López & Sohm - Edificio Coasmedas</h4>
+								<div class="category-gallery">
+									<div class="col-md-4">
+										<a href="#" data-bs-toggle="modal" data-bs-target="#projectModal" data-project="4">
+											<img src="./img/gallery/category_4/1.jpeg" alt="Proyecto 4" loading="lazy">
 										</a>
 									</div>
 								</div>
@@ -427,8 +447,8 @@
 			<div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
 				<div class="pills-contact">
 					<div class="contact-content">
-						<div class="col-lg-12">
-							<h2>Contacto</h2>
+						<div class="col-lg-12 px-4 px-md-0 text-center">
+							<h2 class="margen-bottom">Contacto</h2>
 						</div>
 						<div class="contact-form">
 							<form id="contactForm" onsubmit="submitForm(event)">
@@ -469,11 +489,11 @@
 		</footer>
 	</div>
 
-	<div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
+	<div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalTitle" aria-hidden="true">
 		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="projectModalLabel">Detalles del Proyecto</h5>
+					<h5 class="modal-title" id="projectModalTitle">Detalles del proyecto</h5>
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
 				<div class="modal-body">

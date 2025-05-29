@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         const loadingScreen = document.getElementById('loading-screen');
         loadingScreen.classList.add('hidden-loader');
-    }, 5000); 
+    }, 4000); 
 });
 
 document.addEventListener('DOMContentLoaded', () => {
