@@ -44,6 +44,13 @@ export function handleButtons() {
             }
         });
     });
+
+    document.querySelectorAll('.button-group .col-4').forEach(col => {
+        col.addEventListener('click', function () {
+            const button = this.querySelector('button');
+            if (button) button.click();
+        });
+    });
 }
 
 export function handleScroll() {

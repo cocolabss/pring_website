@@ -134,3 +134,8 @@
         }
     }
 }
+
+.button-group .col-4{
+    position: relative;
+    z-index: 9000;
+}
