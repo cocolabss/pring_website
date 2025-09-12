@@ -1,251 +1,258 @@
 #pills-gallery {
     min-height: 100vh;
+    background-color: #000;
+    padding: 80px 0;
 }
 
 .pills-gallery {
-    padding-top: 100px;
     display: flex;
     justify-content: center;
-}
-
-.gallery-content {
-    max-width: 1400px;
     width: 100%;
-}
-
-h2, h3, h4 {
-    color: #fff;
-}
-
-.gallery-categories {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.category {
-    display: flex;
-    flex-direction: column;
-}
-
-.category-gallery {
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-.category-gallery .col-md-4 {
-    flex: 1;
-    max-width: calc(50% - 0.5rem);
-}
-
-.category-gallery img {
-    width: auto;
-    max-height: 400px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.category-gallery img:hover {
-    transform: scale(1.05);
-}
-
-.category:nth-child(odd) .category-gallery {
-    justify-content: flex-start;
-}
-
-.category:nth-child(even) .category-gallery {
-    justify-content: flex-end;
-}
-
-.category:nth-child(even) h3 {
-    text-align: right;
-}
-
-.category:nth-child(even) h4 {
-    text-align: right;
-}
-
-h3 {
-    margin-bottom: 1rem;
-}
-
-.carousel-control-prev,
-.carousel-control-next {
-    width: 60px;
-    height: 60px;
-    background-color: black;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1;
-    cursor: pointer;
-    opacity: 0.7;
-    transition: opacity 0.3s;
-}
-
-.carousel-control-prev:hover,
-.carousel-control-next:hover {
-    opacity: 1;
-}
-
-.carousel-control-prev {
-    left: 15px;
-}
-
-.carousel-control-next {
-    right: 15px;
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    background-color: transparent;
-    background-image: none;
-    width: 20px;
-    height: 20px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    display: inline-block;
-    padding: 5px;
-    box-sizing: border-box;
-}
-
-.carousel-control-prev-icon {
-    transform: rotate(135deg);
-}
-
-.carousel-control-next-icon {
-    transform: rotate(-45deg);
 }
 
 .gallery-categories {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
 }
 
 .category {
-    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
 }
 
-.margen-web {
-    margin-left: 15px;
-    margin-right: 15px;
+.project-title {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+
+.project-title.text-end {
+    text-align: right;
+}
+
+.project-description {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    max-width: 600px;
+}
+
+.project-description.text-end {
+    text-align: right;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.project-description p {
+    margin: 0;
+}
+
+.category-gallery {
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 .carousel-container {
     position: relative;
-    width: 80%;
-    max-width: 900px;
-    height: 300px;
+    width: 100%;
+    max-width: 1000px;
+    height: 400px;
     overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    background-color: transparent;
 }
 
-.carousel-track {
+.carousel-slides {
     display: flex;
+    align-items: center;
+    gap: 12px;
     height: 100%;
-    animation: slideInfinite 15s linear infinite;
-    gap: 15px;
+    transition: transform 0.5s ease-in-out;
+    will-change: transform;
 }
 
 .carousel-slide {
-    flex-shrink: 0;
+    flex: 0 0 auto;
     height: 100%;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 0;
 }
 
 .carousel-slide img {
-    max-width: 400px;
-    max-height: 100%;
+    height: 100%;
     width: auto;
-    height: auto;
-    object-fit: contain;
+    object-fit: cover;
     display: block;
     border-radius: 8px;
-}
-
-@keyframes slideInfinite {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-50%);
-    }
+    max-height: 100%;
 }
 
 .carousel-indicators {
     position: absolute;
-    bottom: 10px;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 6px;
+    gap: 8px;
+    z-index: 10;
 }
 
 .indicator {
-    width: 6px;
-    height: 6px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
-    background-color: rgba(255,255,255,0.6);
+    background-color: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
+.indicator:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
 .indicator.active {
-    background-color: rgba(255,255,255,0.9);
-}
-
-.justify-content-left {
-    justify-content: flex-start !important;
-}
-
-.justify-content-right {
-    justify-content: flex-end !important;
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
 @media (max-width: 768px) {
     .gallery-categories {
-        padding: 0px 400px !important;
+        padding: 20px 15px;
+        gap: 60px;
     }
-    
+
     .carousel-container {
-        width: 100%;
-        max-width: 100%;
-        height: 200px;
-        margin: 0;
+        height: 300px;
     }
-    
-    .carousel-slide {
-        max-width: 200px;
+
+    .project-title {
+        font-size: 18px;
+        letter-spacing: 1px;
     }
-    
-    .carousel-slide img {
-        max-width: 200px;
+
+    .project-description {
+        font-size: 13px;
     }
-    
-    .col-12 {
-        padding: 0 !important;
+
+    .carousel-indicators {
+        bottom: 15px;
     }
-    
-    .col-12.d-flex.justify-content-left,
-    .col-12.d-flex.justify-content-right {
-        justify-content: flex-start !important;
-    }
-    
-    .margen-web {
-        margin-left: 10px;
-        margin-right: 10px;
+
+    .indicator {
+        width: 6px;
+        height: 6px;
     }
 }
 
-.carousel-track:hover {
-    animation-play-state: paused;
+@media (max-width: 480px) {
+    .carousel-container {
+        height: 250px;
+    }
+
+    .carousel-slide {
+        flex: 0 0 100%;
+    }
+
+    .carousel-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .project-title {
+        font-size: 16px;
+    }
+
+    .project-title.text-end {
+        text-align: left;
+    }
+
+    .project-description {
+        font-size: 12px;
+        margin-bottom: 30px;
+    }
+
+    .project-description.text-end {
+        text-align: left;
+        margin-left: 0;
+    }
 }
+
+.read-more { color: #fff; line-height: 1.6; }
+.read-more .short, .read-more .full { display: inline; }
+.read-more .full { display: none; }
+.read-more.expanded .short { display: none; }
+.read-more.expanded .full { display: inline; }
+.read-more-toggle {
+  display: inline-block;
+  margin-left: 8px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  border-bottom: 1px solid rgba(255,255,255,0.18);
+  padding: 2px 6px;
+  cursor: pointer;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.read-more-toggle:focus { outline: 2px solid rgba(255,255,255,0.18); outline-offset: 2px; }
+
+/* cuando el usuario activa interacción en mobile */
+.carousel-slides.user-interacting { scroll-behavior: smooth; }
+
+/* ocultar scrollbar en webkit cuando en modo interactivo */
+.carousel-slides.user-interacting::-webkit-scrollbar { height: 8px; display: none; }
+.carousel-slides.user-interacting { -ms-overflow-style: none; scrollbar-width: none; }
+.carousel-slides { scroll-behavior: smooth; -webkit-overflow-scrolling: touch; }
+.carousel-slides.user-interacting { scroll-behavior: smooth; }
+.carousel-slides::-webkit-scrollbar { height: 8px; }
+
+
+/* flechas móviles posicionadas respecto al .carousel-container */
+.carousel-arrow {
+  position: absolute;
+  top: 85%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.45);
+  border: none;
+  color: #fff;
+  padding: 10px 14px;
+  font-size: 22px;
+  line-height: 1;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 30;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+}
+
+/* separación desde los bordes del carousel */
+.carousel-arrow-left { left: 12px; }
+.carousel-arrow-right { right: 12px; }
+
+/* ocultar indicadores (puntos) en mobile y mostrar en desktop */
+@media (max-width: 480px) {
+  .carousel-indicators { pointer-events: none; } /* evitamos clicks sobre el contenedor central */
+  .indicator { display: none; }
+  .carousel-arrow { display: block; }
+}
+
+/* asegurarnos que en desktop las flechas no aparezcan */
+@media (min-width: 481px) {
+  .carousel-arrow { display: none; }
+  .carousel-indicators { pointer-events: auto; }
+}
+

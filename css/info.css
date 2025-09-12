@@ -15,8 +15,32 @@
             }
 
             .img-background {
-                width: 100%;
+                width: 700px;
+                height: 655px;
                 display: block;
+            }
+
+            @media screen and (max-width: 1400px) {
+                .img-background {
+                    width: 700px;
+                    height: 655px;
+                    display: block;
+                }
+            }
+
+            @media screen and (max-width: 1024px) {
+                .img-background {
+                    width: 509px;
+                    height: 476px;
+                    display: block;
+                }
+            }
+
+            @media screen and (max-width: 1024px) {
+                .img-background {
+                    width: 100%;
+                    display: block;
+                }
             }
 
             .img-foreground {

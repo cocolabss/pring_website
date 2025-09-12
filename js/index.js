@@ -4,10 +4,16 @@ baguetteBox.run('.tz-gallery');
 baguetteBox.run('#carouselGallery');
 
 document.addEventListener('DOMContentLoaded', () => {
+  const loadingScreen = document.getElementById('loading-screen');
+  if (!loadingScreen) return;
+  setTimeout(() => {
+    loadingScreen.classList.add('hidden-loader');
     setTimeout(() => {
-        const loadingScreen = document.getElementById('loading-screen');
-        loadingScreen.classList.add('hidden-loader');
-    }, 4000); 
+      if (loadingScreen && loadingScreen.parentNode) {
+        loadingScreen.parentNode.removeChild(loadingScreen);
+      }
+    }, 600); 
+  }, 4000);
 });
 
 document.addEventListener('DOMContentLoaded', () => {

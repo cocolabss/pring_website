@@ -1,57 +1,83 @@
-#pills-contact {
-    background-color: black;
-    height: 100vh;
-
-    .pills-contact {
-        padding-top: 100px;
-        display: flex;
-        justify-content: center;
-
-        .contact-content {
-            width: 1400px;
-
-            h2 {
-                color: #fff;
-            }
-
-            .contact-form {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-
-                form {
-                    background-color: #b3b3b3;
-                    padding: 50px;
-                    width: 650px;
-                    text-align: center;
-
-                    input {
-                        margin-bottom: 20px;
-                        width: 100%;
-                        padding: 10px;
-                        background-color: #b3b3b3;
-                        border: none;
-                        border-bottom: 1px solid #000;
-                        color: #333;
-                    }
-
-                    button {
-                        padding: 10px;
-                        background-color: #b3b3b3;
-                        border: none;
-                        border-bottom: 1px solid #000;
-                        color: #000;
-                        cursor: pointer;
-                        text-align: right;
-                    }
-                }
-            }
-        }
-    }
+#pills-contact { padding: 0; }
+.p-contact {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url('../img/PRING_FONDO-CONTACTO.png');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  overflow: hidden;
 }
-
-#contactForm input::placeholder {
-    color: black;
-    opacity: 1;
-  }
+.p-contact-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.contact-wrap {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 60px 15px;
+}
+.contact-title {
+  color: #ffffff;
+  font-size: 36px;
+  letter-spacing: 6px;
+  text-transform: none;
+  text-align: start;
+  margin-top: 40px !important;
+  margin-bottom: 0px !important;
+}
+.contact-form {
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 60px;
+}
+.form-row {
+  margin-bottom: 36px;
+}
+.form-row label {
+  display: block;
+  font-weight: 700;
+  letter-spacing: 6px;
+  color: rgba(255,255,255,0.95);
+  font-size: 18px;
+}
+.form-row input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid rgba(255,255,255,0.25);
+  padding: 18px 0px;
+  color: #ffffff;
+  font-size: 18px;
+  outline: none;
+  transition: border-color .18s ease;
+}
+.form-row input::placeholder {
+  color: rgba(255,255,255,0.5);
+  opacity: 1;
+}
+.form-row input:focus {
+  border-bottom-color: rgba(255,255,255,0.95);
+}
+.contact-cta {
+  background: none;
+  border: none;
+  border-bottom: 2px solid #ffffff;
+  color: #ffffff;
+  font-size: 22px;
+  letter-spacing: 6px;
+  padding: 10px 22px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+@media (max-width: 991.98px) {
+  .contact-title { font-size: 28px; letter-spacing: 4px; margin-bottom: 40px; }
+  .form-row { margin-bottom: 26px; }
+  .form-row label { letter-spacing: 3px; font-size: 16px; }
+  .form-row input { font-size: 16px; padding: 14px 6px; }
+  .contact-cta { font-size: 18px; letter-spacing: 4px; padding: 8px 18px; }
+}

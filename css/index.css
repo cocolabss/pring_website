@@ -46,38 +46,60 @@ p {
     padding: 0;
 }
 
+/* Pantalla de carga */
 .loading-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    color: white;
-    visibility: visible;
-    opacity: 1;
-    transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
-
-    &:before {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 3px;
-        background-color: #fff;
-        bottom: 0;
-        left: 0;
-        border-radius: 10px;
-        animation: movingLine 2.4s infinite ease-in-out;
-    }
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  color: #fff;
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+  pointer-events: auto;
 }
 
-.hidden-loader {
-    opacity: 0;
-    visibility: hidden;
+/* ocultar loader */
+.loading-container.hidden-loader {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* logo centrado */
+.loading-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* tamaño responsivo del logo */
+.loading-logo img {
+  display: block;
+  width: clamp(120px, 18vw, 260px);
+  height: auto;
+  filter: drop-shadow(0 8px 20px rgba(0,0,0,0.6));
+  /* animación de parpadeo/respiración */
+  animation: blinkSlow 1.2s ease-in-out infinite;
+  will-change: opacity, transform;
+  backface-visibility: hidden;
+}
+
+/* animación: opacidad baja -> completa -> baja (parpadeo lento) */
+@keyframes blinkSlow {
+  0%   { opacity: 0.18; transform: scale(0.985); }
+  45%  { opacity: 1;    transform: scale(1.00);  }
+  100% { opacity: 0.18; transform: scale(0.985); }
+}
+
+/* respetar preferencia de usuario por reducir animaciones */
+@media (prefers-reduced-motion: reduce) {
+  .loading-logo img { animation: none; opacity: 1; transform: none; }
 }
 
 @keyframes movingLine {
@@ -103,52 +125,6 @@ p {
         opacity: 0;
         width: 0;
     }
-}
-
-.loading-text {
-    font-size: 5vw;
-    line-height: 64px;
-    letter-spacing: 10px;
-    margin-bottom: 32px;
-    display: flex;
-    justify-content: space-evenly;
-
-    span {
-        animation: moveLetters 2.4s infinite ease-in-out;
-        transform: translatex(0);
-        position: relative;
-        display: inline-block;
-        opacity: 0;
-        text-shadow: 0px 2px 10px rgba(46, 74, 81, 0.3);
-    }
-}
-
-.loading-text span:nth-child(1) {
-    animation-delay: 0.1s;
-}
-
-.loading-text span:nth-child(2) {
-    animation-delay: 0.2s;
-}
-
-.loading-text span:nth-child(3) {
-    animation-delay: 0.3s;
-}
-
-.loading-text span:nth-child(4) {
-    animation-delay: 0.4s;
-}
-
-.loading-text span:nth-child(5) {
-    animation-delay: 0.5s;
-}
-
-.loading-text span:nth-child(6) {
-    animation-delay: 0.6s;
-}
-
-.loading-text span:nth-child(7) {
-    animation-delay: 0.7s;
 }
 
 @keyframes moveLetters {
@@ -468,7 +444,7 @@ p {
     }
 
     .pills-gallery {
-        padding-top: 80px !important;
+        padding-top: 60px !important;
 
         .gallery-content {
             padding: 0 30px;
