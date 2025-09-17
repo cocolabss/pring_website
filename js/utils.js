@@ -53,76 +53,6 @@ export function handleButtons() {
     });
 }
 
-export function handleScroll() {
-	const scrollBackBtn = document.getElementById("scroll-back-btn");
-	const scrollNextBtn = document.getElementById("scroll-next-btn");
-
-	function isMobile() {
-		return window.innerWidth <= 768;
-	}
-
-	if (isMobile()) {
-		scrollBackBtn.style.display = "none";
-		scrollNextBtn.style.display = "none";
-		return;
-	}
-
-	function checkNavigationButtons() {
-		const activeLink = document.querySelector('.nav-link.active');
-		const nextLink = activeLink.closest('li').nextElementSibling;
-		const prevLink = activeLink.closest('li').previousElementSibling;
-
-		scrollNextBtn.style.visibility = nextLink ? "visible" : "hidden";
-		scrollBackBtn.style.visibility = prevLink ? "visible" : "hidden";
-	}
-
-	function getNextSection() {
-		const activeLink = document.querySelector('.nav-link.active');
-		const nextLink = activeLink.closest('li').nextElementSibling;
-		if (nextLink) {
-			const nextTab = nextLink.querySelector('.nav-link');
-			return nextTab.getAttribute('href').substring(1);
-		}
-		return null;
-	}
-
-	function getPreviousSection() {
-		const activeLink = document.querySelector('.nav-link.active');
-		const prevLink = activeLink.closest('li').previousElementSibling;
-		if (prevLink) {
-			const prevTab = prevLink.querySelector('.nav-link');
-			return prevTab.getAttribute('href').substring(1);
-		}
-		return null;
-	}
-
-	scrollNextBtn.addEventListener("click", function () {
-		const nextSectionId = getNextSection();
-		if (nextSectionId) {
-			const nextTab = document.querySelector(`#pills-tab a[href="#${nextSectionId}"]`);
-			if (nextTab) {
-				const tab = new bootstrap.Tab(nextTab);
-				tab.show();
-				checkNavigationButtons();
-			}
-		}
-	});
-
-	scrollBackBtn.addEventListener("click", function () {
-		const prevSectionId = getPreviousSection();
-		if (prevSectionId) {
-			const prevTab = document.querySelector(`#pills-tab a[href="#${prevSectionId}"]`);
-			if (prevTab) {
-				const tab = new bootstrap.Tab(prevTab);
-				tab.show();
-				checkNavigationButtons();
-			}
-		}
-	});
-
-	checkNavigationButtons();
-}
-
 
 const projects = {
     1: {
@@ -175,7 +105,7 @@ class StaticCarousel {
     this.slidesContainer = container.querySelector('.carousel-slides');
     this.indicatorsContainer = container.querySelector('.carousel-indicators');
     this.currentPage = 0;
-    this.autoSlideInterval = null;
+    // REMOVIDO: autoSlideInterval = null (ya no se usa)
     this.slidesPerView = this.getSlidesPerView();
     this.pageStarts = [];
     this.positions = [];
@@ -197,9 +127,7 @@ class StaticCarousel {
     return window.innerWidth > 768;
   }
 
-  getAutoInterval() {
-    return 5000 * (this.isDesktop() ? 2 : 1);
-  }
+  // REMOVIDO: getAutoInterval() ya no se necesita
 
   init() {
     this.createSlides();
@@ -241,9 +169,7 @@ class StaticCarousel {
       });
       Promise.all(promises).then(() => {
         requestAnimationFrame(() => {
-          // aseguramos scroll-smooth por defecto
           this.slidesContainer.style.scrollBehavior = 'smooth';
-          // estado inicial: overflow hidden (no scroll visible), usaremos scrollLeft para moverse
           this.slidesContainer.style.overflowX = 'hidden';
           this.computeLayoutWithRetries(4, 100);
         });
@@ -285,17 +211,15 @@ class StaticCarousel {
     }
     if (!this.pageStarts || this.pageStarts.length === 0) this.pageStarts = [0];
     this.createIndicators();
-    this.showPage(0, false); // show immediately, sin smooth extra
-    this.startAutoSlide();
+    this.showPage(0, false);
+    // REMOVIDO: this.startAutoSlide(); - YA NO SE INICIA AUTOMÁTICAMENTE
   }
 
   computeLayout() {
     const slides = Array.from(this.slidesContainer.children);
-    // positions relativas al inicio del slidesContainer
     const baseLeft = this.slidesContainer.getBoundingClientRect().left;
     this.positions = slides.map(s => {
       const r = s.getBoundingClientRect();
-      // left relativo
       return Math.max(0, Math.round(r.left - baseLeft + this.slidesContainer.scrollLeft));
     });
     this.widths = slides.map(s => {
@@ -308,7 +232,6 @@ class StaticCarousel {
     this.containerWidth = containerWidth;
     this.maxStart = Math.max(0, totalWidth - containerWidth);
 
-    // construir pageStarts: cada slide que pueda ser inicio de página (hasta maxStart)
     this.pageStarts = [];
     for (let i = 0; i < this.positions.length; i++) {
       if (this.positions[i] <= this.maxStart) this.pageStarts.push(i);
@@ -323,88 +246,74 @@ class StaticCarousel {
   }
 
   createIndicators() {
-	// limpiar contenedor de indicadores
-	this.indicatorsContainer.innerHTML = '';
+    this.indicatorsContainer.innerHTML = '';
+    const isMobile = window.innerWidth <= 480;
+    this.removeMobileArrows();
 
-	const isMobile = window.innerWidth <= 480;
+    // CAMBIO: Crear flechas tanto para móvil como para escritorio
+    const left = document.createElement('button');
+    left.className = 'carousel-arrow carousel-arrow-left';
+    left.setAttribute('aria-label', 'Anterior');
+    left.innerHTML = '&#10094;';
 
-	// eliminar flechas antiguas en caso de re-render
-	this.removeMobileArrows();
+    const right = document.createElement('button');
+    right.className = 'carousel-arrow carousel-arrow-right';
+    right.setAttribute('aria-label', 'Siguiente');
+    right.innerHTML = '&#10095;';
 
-	if (isMobile) {
-		// crear flechas y añadirlas AL CONTENEDOR PRINCIPAL (this.container)
-		const left = document.createElement('button');
-		left.className = 'carousel-arrow carousel-arrow-left';
-		left.setAttribute('aria-label', 'Anterior');
-		left.innerHTML = '&#10094;';
+    this.container.appendChild(left);
+    this.container.appendChild(right);
 
-		const right = document.createElement('button');
-		right.className = 'carousel-arrow carousel-arrow-right';
-		right.setAttribute('aria-label', 'Siguiente');
-		right.innerHTML = '&#10095;';
+    left.addEventListener('click', (e) => {
+      e.stopPropagation();
+      this.onUserInteraction();
+      this.showPrev();
+    });
+    right.addEventListener('click', (e) => {
+      e.stopPropagation();
+      this.onUserInteraction();
+      this.showNext();
+    });
 
-		// añadir al container (no al indicatorsContainer) para que se posicionen respecto al ancho total
-		this.container.appendChild(left);
-		this.container.appendChild(right);
+    // Crear indicadores para escritorio
+    if (!isMobile) {
+      const totalPages = Math.max(1, this.pageStarts.length);
+      for (let i = 0; i < totalPages; i++) {
+        const indicator = document.createElement('span');
+        indicator.className = `indicator ${i === 0 ? 'active' : ''}`;
+        indicator.dataset.page = i;
+        this.indicatorsContainer.appendChild(indicator);
+        indicator.addEventListener('click', (e) => {
+          e.stopPropagation();
+          if (this.getSlidesPerView() === 1) this.onUserInteraction();
+          this.showPage(i);
+        });
+      }
+    }
+  }
 
-		left.addEventListener('click', (e) => {
-		e.stopPropagation();
-		this.onUserInteraction();
-		this.showPrev();
-		});
-		right.addEventListener('click', (e) => {
-		e.stopPropagation();
-		this.onUserInteraction();
-		this.showNext();
-		});
+  removeMobileArrows() {
+    const existingLeft = this.container.querySelector('.carousel-arrow-left');
+    const existingRight = this.container.querySelector('.carousel-arrow-right');
+    if (existingLeft) existingLeft.remove();
+    if (existingRight) existingRight.remove();
+  }
 
-		// aún dejamos el area de indicadores para consistencia (puede quedar vacía o con estilo)
-		// (si quieres ocultar por completo .carousel-indicators en mobile, lo hacemos por CSS)
-	} else {
-		const totalPages = Math.max(1, this.pageStarts.length);
-		for (let i = 0; i < totalPages; i++) {
-		const indicator = document.createElement('span');
-		indicator.className = `indicator ${i === 0 ? 'active' : ''}`;
-		indicator.dataset.page = i;
-		this.indicatorsContainer.appendChild(indicator);
-		indicator.addEventListener('click', (e) => {
-			e.stopPropagation();
-			if (this.getSlidesPerView() === 1) this.onUserInteraction();
-			this.showPage(i);
-		});
-		}
-	}
-	}
+  showPrev() {
+    const totalPages = this.pageStarts.length || 1;
+    const prev = (this.currentPage - 1 + totalPages) % totalPages;
+    this.showPage(prev);
+  }
 
-	// helper para eliminar flechas móviles previas
-	removeMobileArrows() {
-	const existingLeft = this.container.querySelector('.carousel-arrow-left');
-	const existingRight = this.container.querySelector('.carousel-arrow-right');
-	if (existingLeft) existingLeft.remove();
-	if (existingRight) existingRight.remove();
-	}
-
-	showPrev() {
-	const totalPages = this.pageStarts.length || 1;
-	const prev = (this.currentPage - 1 + totalPages) % totalPages;
-	this.showPage(prev);
-	}
-
-	showNext() {
-	const totalPages = this.pageStarts.length || 1;
-	const next = (this.currentPage + 1) % totalPages;
-	this.showPage(next);
-	}
+  showNext() {
+    const totalPages = this.pageStarts.length || 1;
+    const next = (this.currentPage + 1) % totalPages;
+    this.showPage(next);
+  }
 
   setupEventListeners() {
-    // detener auto-slide en desktop al hover
-    this.container.addEventListener('mouseenter', () => {
-      if (this.isDesktop()) this.stopAutoSlide();
-    });
-    this.container.addEventListener('mouseleave', () => {
-      if (this.isDesktop()) this.startAutoSlide();
-    });
-
+    // REMOVIDO: Los event listeners de mouseenter/mouseleave para auto-slide
+    
     // interacción táctil/pointer para mobile -> activar modo scroll
     this.slidesContainer.addEventListener('touchstart', () => this.onUserInteraction(), { passive: true });
     this.slidesContainer.addEventListener('pointerdown', (e) => {
@@ -438,16 +347,14 @@ class StaticCarousel {
     if (this.userInteracted) return;
     if (this.getSlidesPerView() === 1) {
       this.userInteracted = true;
-      this.stopAutoSlide();
+      // REMOVIDO: this.stopAutoSlide(); ya no se necesita
 
-      // convertir transform actual (si existiera) a scrollLeft de forma segura
       const transform = this.slidesContainer.style.transform || '';
       const m = transform.match(/translate3d\((-?\d+\.?\d*)px/);
       const px = m ? Math.abs(Math.round(parseFloat(m[1]))) : (this.slidesContainer.scrollLeft || 0);
       this.slidesContainer.style.transform = '';
       this.slidesContainer.scrollLeft = px;
 
-      // activar scroll nativo y scroll-snap para swipes
       this.slidesContainer.style.transition = 'none';
       this.slidesContainer.style.overflowX = 'auto';
       this.slidesContainer.style.scrollSnapType = 'x mandatory';
@@ -455,27 +362,21 @@ class StaticCarousel {
       this.slidesContainer.classList.add('user-interacting');
       Array.from(this.slidesContainer.children).forEach(s => s.style.scrollSnapAlign = 'start');
 
-      // recalcular layout para que positions correspondan al scrollLeft
       setTimeout(() => this.computeLayoutWithRetries(2, 80), 120);
     } else {
-      // tablet/desktop -> solo pausamos auto-slide
+      // tablet/desktop -> marcar como interactuado pero sin auto-slide
       this.userInteracted = true;
-      this.stopAutoSlide();
     }
   }
 
-  // único lugar que mueve la vista: scrollToPosition
   scrollToPosition(px, smooth = true) {
     const left = Math.min(Math.max(0, Math.round(px)), this.maxStart || 0);
     try {
       this.slidesContainer.scrollTo({ left, behavior: smooth ? 'smooth' : 'auto' });
     } catch (e) {
-      // fallback simple
       this.slidesContainer.scrollLeft = left;
     }
-    // actualizar indicadores visualmente
     const indicators = Array.from(this.indicatorsContainer.children);
-    // encontrar la página actual
     let page = 0;
     for (let i = 0; i < this.pageStarts.length; i++) {
       const idx = this.pageStarts[i];
@@ -492,25 +393,6 @@ class StaticCarousel {
     const startSlideIndex = this.pageStarts[pageIndex] || 0;
     const targetPos = Math.min(this.positions[startSlideIndex] || 0, this.maxStart);
     this.scrollToPosition(targetPos, smooth);
-  }
-
-  startAutoSlide() {
-    this.stopAutoSlide();
-    if (this.userInteracted && this.getSlidesPerView() === 1) return;
-    const totalPages = this.pageStarts.length || 1;
-    if (totalPages <= 1) return;
-    const interval = this.getAutoInterval();
-    this.autoSlideInterval = setInterval(() => {
-      const next = (this.currentPage + 1) % totalPages;
-      this.showPage(next);
-    }, interval);
-  }
-
-  stopAutoSlide() {
-    if (this.autoSlideInterval) {
-      clearInterval(this.autoSlideInterval);
-      this.autoSlideInterval = null;
-    }
   }
 
   setupResize() {
@@ -553,54 +435,3 @@ export function submitForm(event) {
     document.getElementById("contactForm").reset();
     alert("Formulario enviado con éxito.");
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-  const DEFAULT_MAX = 30;
-  let idCounter = 0;
-  const nodes = Array.from(document.querySelectorAll('p.read-more'));
-
-  nodes.forEach(p => {
-    const raw = p.textContent.trim();
-    const max = Number(p.dataset.maxWords) || DEFAULT_MAX;
-    if (!raw) return;
-    const words = raw.split(/\s+/);
-    if (words.length <= max) return;
-
-    const shortText = words.slice(0, max).join(' ') + '...';
-    const fullText = raw;
-
-    const shortSpan = document.createElement('span');
-    shortSpan.className = 'short';
-    shortSpan.textContent = shortText;
-
-    const fullSpan = document.createElement('span');
-    fullSpan.className = 'full';
-    fullSpan.textContent = fullText;
-
-    p.innerHTML = '';
-    p.appendChild(shortSpan);
-    p.appendChild(fullSpan);
-
-    const toggle = document.createElement('button');
-    toggle.type = 'button';
-    toggle.className = 'read-more-toggle';
-    toggle.textContent = 'Ver más';
-    const uid = `readmore-${++idCounter}`;
-    toggle.id = uid;
-    toggle.setAttribute('aria-expanded', 'false');
-    toggle.setAttribute('aria-controls', uid + '-txt');
-
-    const hiddenSpan = document.createElement('span');
-    hiddenSpan.id = uid + '-txt';
-    hiddenSpan.style.display = 'none';
-    p.appendChild(hiddenSpan);
-
-    p.appendChild(toggle);
-
-    toggle.addEventListener('click', () => {
-      const expanded = p.classList.toggle('expanded');
-      toggle.textContent = expanded ? 'Ver menos' : 'Ver más';
-      toggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
-    });
-  });
-});

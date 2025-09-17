@@ -1,4 +1,4 @@
-import { setupTabs, handleButtons, handleScroll, galleryCarousel, submitForm } from './utils.js';
+import { setupTabs, handleButtons, galleryCarousel, submitForm } from './utils.js';
 
 baguetteBox.run('.tz-gallery');
 baguetteBox.run('#carouselGallery');
@@ -19,8 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
     setupTabs();
     handleButtons();
-	handleScroll();
-	galleryCarousel();
+	  galleryCarousel();
 });
 
 document.getElementById("contactForm").addEventListener("submit", submitForm);

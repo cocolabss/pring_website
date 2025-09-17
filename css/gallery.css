@@ -191,25 +191,6 @@
     }
 }
 
-.read-more { color: #fff; line-height: 1.6; }
-.read-more .short, .read-more .full { display: inline; }
-.read-more .full { display: none; }
-.read-more.expanded .short { display: none; }
-.read-more.expanded .full { display: inline; }
-.read-more-toggle {
-  display: inline-block;
-  margin-left: 8px;
-  background: transparent;
-  border: none;
-  color: #fff;
-  border-bottom: 1px solid rgba(255,255,255,0.18);
-  padding: 2px 6px;
-  cursor: pointer;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-.read-more-toggle:focus { outline: 2px solid rgba(255,255,255,0.18); outline-offset: 2px; }
 
 /* cuando el usuario activa interacción en mobile */
 .carousel-slides.user-interacting { scroll-behavior: smooth; }
@@ -225,34 +206,55 @@
 /* flechas móviles posicionadas respecto al .carousel-container */
 .carousel-arrow {
   position: absolute;
-  top: 85%;
+  top: 50%;
   transform: translateY(-50%);
-  background: rgba(0,0,0,0.45);
+  background: rgba(0,0,0,0.7);
   border: none;
   color: #fff;
-  padding: 10px 14px;
+  padding: 12px 16px;
   font-size: 22px;
   line-height: 1;
-  border-radius: 10px;
+  border-radius: 50%;
   cursor: pointer;
   z-index: 30;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
+.carousel-arrow:hover {
+  background: rgba(0,0,0,0.9);
+  transform: translateY(-50%) scale(1.1);
 }
 
 /* separación desde los bordes del carousel */
-.carousel-arrow-left { left: 12px; }
-.carousel-arrow-right { right: 12px; }
+.carousel-arrow-left { left: 15px; }
+.carousel-arrow-right { right: 15px; }
 
 /* ocultar indicadores (puntos) en mobile y mostrar en desktop */
 @media (max-width: 480px) {
-  .carousel-indicators { pointer-events: none; } /* evitamos clicks sobre el contenedor central */
-  .indicator { display: none; }
-  .carousel-arrow { display: block; }
+  .carousel-indicators { 
+    pointer-events: none; 
+  }
+  .indicator { 
+    display: none; 
+  }
+  .carousel-arrow { 
+    display: block;
+    top: 85%; /* posición más baja en móvil */
+    padding: 10px 14px;
+    border-radius: 10px; /* menos redondeado en móvil */
+  }
+  .carousel-arrow-left { left: 12px; }
+  .carousel-arrow-right { right: 12px; }
 }
 
 /* asegurarnos que en desktop las flechas no aparezcan */
 @media (min-width: 481px) {
-  .carousel-arrow { display: none; }
-  .carousel-indicators { pointer-events: auto; }
+  .carousel-arrow { 
+    display: block; /* CAMBIO: ahora se muestran en desktop también */
+  }
+  .carousel-indicators { 
+    pointer-events: auto; 
+  }
 }
 

@@ -1,10 +1,22 @@
 #pills-us {
-    /* background-color: #fff; */
-
     .pills-us {
         padding-top: 100px;
         display: flex;
         justify-content: center;
+
+        @media screen and (min-width: 681px) and (max-width: 991px) {
+            .us-content {
+                display: flex;
+                align-items: flex-start;
+            }
+            .us-content > .col-lg-6:first-child {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+            }
+        }
 
         .us-content {
             width: 1400px;
@@ -14,33 +26,14 @@
                 position: relative;
             }
 
+            .option4 .img-foreground {
+                filter: drop-shadow(0 0 10px rgba(0,0,0,0.8)) drop-shadow(0 0 20px rgba(0,0,0,0.6));
+            }
+
             .img-background {
                 width: 700px;
                 height: 655px;
                 display: block;
-            }
-
-            @media screen and (max-width: 1400px) {
-                .img-background {
-                    width: 700px;
-                    height: 655px;
-                    display: block;
-                }
-            }
-
-            @media screen and (max-width: 1024px) {
-                .img-background {
-                    width: 509px;
-                    height: 476px;
-                    display: block;
-                }
-            }
-
-            @media screen and (max-width: 1024px) {
-                .img-background {
-                    width: 100%;
-                    display: block;
-                }
             }
 
             .img-foreground {
@@ -49,6 +42,87 @@
                 left: 50%;
                 transform: translate(-50%, -50%);
                 width: 85%;
+            }
+
+            @media screen and (max-width: 1400px) {
+                .img-background {
+                    width: 100%;
+                    display: block;
+                }
+                .img-foreground {
+                    width: 65%;
+                }
+                .img-overlay {
+                    width: 65%;
+                }
+            }
+
+            @media screen and (max-width: 1024px) {
+                .img-background {
+                    width: 688px;
+                    height: 644px;
+                    display: block;
+                }
+                .img-foreground {
+                    width: 65%;
+                }
+                .img-overlay {
+                    width: 100%;
+                }
+            }
+
+            @media screen and (min-width: 992px) and (max-width: 1399px) {
+                .img-background {
+                    width: 100%;
+                    display: block;
+                }
+                .img-foreground {
+                    width: 85%;
+                }
+                .img-overlay {
+                    width: 100%;
+                }
+            }
+
+            @media screen and (min-width: 822px) and (max-width: 991px) {
+                .img-background {
+                    width: 688px;
+                    height: 644px;
+                    display: block;
+                }
+                .img-foreground {
+                    width: 85%;
+                }
+                .img-overlay {
+                    width: 70%;
+                }
+            }
+
+            @media screen and (min-width: 768px) and (max-width: 821px) {
+                .img-background {
+                    width: 688px;
+                    height: 644px;
+                    display: block;
+                }
+                .img-foreground {
+                    width: 85%;
+                }
+                .img-overlay {
+                    width: 85%;
+                }
+            }
+
+            @media screen and (max-width: 680px) {
+                .img-background {
+                    width: 100%;
+                    display: block;
+                }
+                .img-foreground {
+                    width: 85%;
+                }
+                .img-overlay {
+                    width: 100%;
+                }
             }
 
             .text-overlay {

@@ -252,44 +252,6 @@ p {
     display: none;
 }
 
-.floating-buttons {
-    position: fixed;
-	display: flex !important;
-	justify-content: space-between;
-	width: 100%;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1000;
-    display: none;
-	padding: 0 10px;
-
-	.scroll-button {
-		background-color: black;
-		color: white;
-		border: none;
-		padding: 20px;
-		border-radius: 50%;
-		font-size: 20px;
-		cursor: pointer;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		transition: background-color 0.3s ease;
-	}
-
-	.scroll-button:hover {
-		background-color: #333;
-	}
-
-	#scroll-back-btn {
-		left: 10px;
-	}
-
-	#scroll-next-btn {
-		right: 10px;
-	}
-}
-
 .margen-vertical {
     margin: 40px 0 !important;
 }
